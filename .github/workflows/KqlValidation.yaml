@@ -1,7 +1,9 @@
 name: Validate KQL queries
-on: push
-  paths:
-    - 'Queries/**'
+on:
+  push:
+    paths:
+      - "Queries/**"
+      - ".github/workflows/**"
 
 jobs:
   kql-validate:
