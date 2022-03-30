@@ -1,0 +1,374 @@
+{
+  "Name": "AADNonInteractiveUserSignInLogs",
+  "description": "Non-interactive Azure Active Directory sign-in logs from user.",
+  "dataTypeId": "TENANTMICROSOFTAADIAM_NONINTERACTIVE",
+  "IsResourceCentric": false,
+  "categories": [
+    "audit",
+    "security"
+  ],
+  "artifactVersion": 4,
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "Type": "String",
+      "dataTypeHint": "GUID",
+      "isDefaultDisplay": true,
+      "description": "The tenant GUID that's associated with the logs"
+    },
+    {
+      "Name": "SourceSystem",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": false,
+      "description": "Details of source system of the object being provisioned"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Type": "DateTime",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "The date and time of the event in UTC"
+    },
+    {
+      "Name": "OperationName",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "For sign-ins, this value is always Sign-in activity"
+    },
+    {
+      "Name": "OperationVersion",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": false,
+      "description": "The REST API version that's requested by the client"
+    },
+    {
+      "Name": "Category",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Category of the sign-in event"
+    },
+    {
+      "Name": "ResultType",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "The result of the sign-in operation can be Success or Failure"
+    },
+    {
+      "Name": "ResultSignature",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": false,
+      "description": "Contains the error code, if any, for the sign-in operation"
+    },
+    {
+      "Name": "ResultDescription",
+      "Type": "String",
+      "isDefaultDisplay": false,
+      "description": "Provides the error description for the sign-in operation"
+    },
+    {
+      "Name": "DurationMs",
+      "Type": "BigInt",
+      "isDefaultDisplay": true,
+      "description": "The duration of the operation in milliseconds"
+    },
+    {
+      "Name": "CorrelationId",
+      "Type": "String",
+      "dataTypeHint": "GUID",
+      "isDefaultDisplay": false,
+      "description": "ID to provide sign-in trail"
+    },
+    {
+      "Name": "ResourceGroup",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": false,
+      "description": "Resource group for the logs"
+    },
+    {
+      "Name": "Identity",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "The identity from the token that was presented when you made the request. It can be a user account, system account, or service principal"
+    },
+    {
+      "Name": "Level",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "The severity level of the event"
+    },
+    {
+      "Name": "Location",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "The region of the resource emitting the event"
+    },
+    {
+      "Name": "AlternateSignInName",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Provides the on-premises UPN of the user sign-ing into Azure AD.e.g. Phone number sign-in"
+    },
+    {
+      "Name": "AppDisplayName",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "App Name displayed in the Azure portal"
+    },
+    {
+      "Name": "AppId",
+      "Type": "String",
+      "dataTypeHint": "GUID",
+      "isDefaultDisplay": true,
+      "description": "Unique GUID representing the app ID in the Azure Active Directory"
+    },
+    {
+      "Name": "AuthenticationDetails",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "A record of each step of authentication undertaken in the sign-in"
+    },
+    {
+      "Name": "AuthenticationMethodsUsed",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "List of authentication methods used"
+    },
+    {
+      "Name": "AuthenticationProcessingDetails",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Provides the details associated with authentication processor"
+    },
+    {
+      "Name": "AuthenticationRequirement",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Type of authentication required for the sign-in.  If set to multiFactorAuthentication, an MFA step was required.  If set to singleFactorAuthentication, no MFA was required"
+    },
+    {
+      "Name": "AuthenticationRequirementPolicies",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Set of CA policies that apply to this sign-in, each as CA: policy Name, and/or MFA: Per-user"
+    },
+    {
+      "Name": "ClientAppUsed",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Details outlining app auth used (Legacy vs non Legacy) Eg: Modern Browser, Native App, Exchange Activty Sync and Older Clients"
+    },
+    {
+      "Name": "ConditionalAccessPolicies",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Details of the conditional access policies being applied for the sign-in"
+    },
+    {
+      "Name": "ConditionalAccessStatus",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Status of all the conditionalAccess policies related to the sign-in"
+    },
+    {
+      "Name": "CreatedDateTime",
+      "Type": "DateTime",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Datetime of the sign-in activity"
+    },
+    {
+      "Name": "DeviceDetail",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Details of the device used for the sign-in"
+    },
+    {
+      "Name": "IsInteractive",
+      "Type": "Bool",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Indicates if a sign-in is interactive or not"
+    },
+    {
+      "Name": "Id",
+      "Type": "String",
+      "dataTypeHint": "GUID",
+      "isDefaultDisplay": true,
+      "description": "Unique ID representing the sign-in activity"
+    },
+    {
+      "Name": "IPAddress",
+      "Type": "String",
+      "dataTypeHint": "IP",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "IP address of the client used to sign in"
+    },
+    {
+      "Name": "IsRisky",
+      "Type": "Bool",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Indicates if a sign-in is considered risky or not"
+    },
+    {
+      "Name": "LocationDetails",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Details of the sign-in location"
+    },
+    {
+      "Name": "MfaDetail",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Details of the Multi-factor authentication"
+    },
+    {
+      "Name": "NetworkLocationDetails",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Provides the details associated with authentication processor"
+    },
+    {
+      "Name": "OriginalRequestId",
+      "Type": "String",
+      "dataTypeHint": "GUID",
+      "isDefaultDisplay": true,
+      "description": "The request id of the first request in the authentication sequence"
+    },
+    {
+      "Name": "ProcessingTimeInMs",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Request processing time in milliseconds in AD STS"
+    },
+    {
+      "Name": "ResourceDisplayName",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Name of the resource that the user signed into"
+    },
+    {
+      "Name": "ResourceIdentity",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "ID of the resource that the user signed into"
+    },
+    {
+      "Name": "ResourceTenantId",
+      "Type": "String",
+      "dataTypeHint": "GUID",
+      "isDefaultDisplay": true,
+      "description": "The resource tenantId for B2B(business-to-business) scenarios"
+    },
+    {
+      "Name": "RiskDetail",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Risky user state details"
+    },
+    {
+      "Name": "RiskEventTypes",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "The list of risk event Types associated with the sign-in"
+    },
+    {
+      "Name": "RiskEventTypes_V2",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "The list of risk event Types associated with the sign-in. These are strings"
+    },
+    {
+      "Name": "RiskLevelAggregated",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Aggregated risk level"
+    },
+    {
+      "Name": "RiskLevelDuringSignIn",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Risk level during sign-in"
+    },
+    {
+      "Name": "RiskState",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Risky user state"
+    },
+    {
+      "Name": "SignInEventTypes",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "The Types that are associated with the sign-in.  Examples include \"interactive\", \"refreshToken\", \"managedIdentity\", \"continuousAccessEvaluation\" and many more"
+    },
+    {
+      "Name": "Status",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Details of the sign-in status"
+    },
+    {
+      "Name": "TokenIssuerName",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Name of the identity provider (e.g. sts.microsoft.com )"
+    },
+    {
+      "Name": "TokenIssuerType",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "Type of identityProvider (Azure AD, AD Federation Services)"
+    },
+    {
+      "Name": "UserAgent",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "User Agent for the sign-in"
+    },
+    {
+      "Name": "UserDisplayName",
+      "Type": "String",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "Display Name of the user that initiated the sign-in"
+    },
+    {
+      "Name": "UserId",
+      "Type": "String",
+      "dataTypeHint": "GUID",
+      "isPreferredFacet": true,
+      "isDefaultDisplay": true,
+      "description": "ID of the user that initiated the sign-in"
+    },
+    {
+      "Name": "UserPrincipalName",
+      "Type": "String",
+      "isDefaultDisplay": true,
+      "description": "User principal Name of the user that initiated the sign-in"
+    }
+  ],
+  "sampleInputRecordsFilePath": "SampleInputRecords/AADSampleNonInteractiveUserSignInLogs.json"
+}
+

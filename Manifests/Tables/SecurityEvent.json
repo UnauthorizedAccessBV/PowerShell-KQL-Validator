@@ -1,0 +1,1746 @@
+{
+  "Name": "SecurityEvent",
+  "DisplayName": "SecurityEvent",
+  "Description": "Security events collected from windows machines by Azure Security Center or Azure Sentinel.",
+  "LastModified": "\/Date(1526542481743+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "Security,SecurityInsights"
+  },
+  "Version": 20,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "RetentionPolicy": {
+    "RetentionType": "Medium",
+    "PerformHardDeleteGrooming": false
+  },
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "SourceSystem",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Account",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AccountType",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Computer",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventSourceName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Channel",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Task",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "Level",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventData",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventID",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "Activity",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceComputerId",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "EventOriginId",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MG",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "TimeCollected",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "ManagementGroupName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PartitionKey",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RowKey",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "StorageAccount",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AzureDeploymentID",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AzureTableName",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AccessList",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AccessMask",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AccessReason",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AccountDomain",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AccountExpires",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AccountName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AccountSessionIdentifier",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AdditionalInfo",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AdditionalInfo2",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AllowedToDelegateTo",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Attributes",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AuditPolicyChanges",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AuditsDiscarded",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "AuthenticationLevel",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "AuthenticationPackageName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AuthenticationProvider",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AuthenticationServer",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AuthenticationService",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "AuthenticationType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CACertificateHash",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CalledStationID",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CallerProcessId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CallerProcessName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CallingStationID",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CAPublicKeyHash",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CategoryId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CertificateDatabaseHash",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClassId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClassName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientAddress",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientIPAddress",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CommandLine",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CompatibleIds",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DCDNSName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DeviceDescription",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DeviceId",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DisplayName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Disposition",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DomainBehaviorVersion",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DomainName",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DomainPolicyChanged",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DomainSid",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EAPType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ElevatedToken",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ErrorCode",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "ExtendedQuarantineState",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FailureReason",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileHash",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FilePath",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FilePathNoUser",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Filter",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ForceLogoff",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Fqbn",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FullyQualifiedSubjectMachineName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FullyQualifiedSubjectUserName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "GroupMembership",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "HandleId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "HardwareIds",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "HomeDirectory",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "HomePath",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ImpersonationLevel",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "InterfaceUuid",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "IpAddress",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "IpPort",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "KeyLength",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "LmPackageName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LocationInformation",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LockoutDuration",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LockoutObservationWindow",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LockoutThreshold",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LoggingResult",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LogonGuid",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "LogonHours",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LogonID",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LogonProcessName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LogonType",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "LogonTypeName",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MachineAccountQuota",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MachineInventory",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MachineLogon",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MandatoryLabel",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MaxPasswordAge",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MemberName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MemberSid",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MinPasswordAge",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MinPasswordLength",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MixedDomainMode",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NASIdentifier",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NASIPv4Address",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NASIPv6Address",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NASPort",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NASPortType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NetworkPolicyName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewDate",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewMaxUsers",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewProcessId",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewProcessName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewRemark",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewShareFlags",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewTime",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewUacValue",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewValue",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewValueType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ObjectName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ObjectServer",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ObjectType",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ObjectValueName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OemInformation",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OldMaxUsers",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OldRemark",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OldShareFlags",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OldUacValue",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OldValue",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OldValueType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OperationType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PackageName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ParentProcessName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PasswordHistoryLength",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PasswordLastSet",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PasswordProperties",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PreviousDate",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PreviousTime",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PrimaryGroupId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PrivateKeyUsageCount",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PrivilegeList",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Process",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ProcessId",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ProcessName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Properties",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ProfilePath",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ProtocolSequence",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ProxyPolicyName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "QuarantineHelpURL",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "QuarantineSessionID",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "QuarantineSessionIdentifier",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "QuarantineState",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "QuarantineSystemHealthResult",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RelativeTargetName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RemoteIpAddress",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RemotePort",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Requester",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RequestId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RestrictedAdminMode",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RowsDeleted",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SamAccountName",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ScriptPath",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SecurityDescriptor",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ServiceAccount",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ServiceFileName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ServiceName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ServiceStartType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "ServiceType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SessionName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ShareLocalPath",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ShareName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SidHistory",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Status",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubjectAccount",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubcategoryGuid",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SubcategoryId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Subject",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubjectDomainName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubjectKeyIdentifier",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubjectLogonId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubjectMachineName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubjectMachineSID",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubjectUserName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubjectUserSid",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubStatus",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TableId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetAccount",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetDomainName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetInfo",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetLinkedLogonId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetLogonGuid",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "TargetLogonId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetOutboundDomainName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetOutboundUserName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetServerName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetSid",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetUser",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetUserName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetUserSid",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TemplateContent",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TemplateDSObjectFQDN",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TemplateInternalName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TemplateOID",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TemplateSchemaVersion",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TemplateVersion",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TokenElevationType",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TransmittedServices",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserAccountControl",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserParameters",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserPrincipalName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserWorkstations",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "VirtualAccount",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "VendorIds",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Workstation",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "WorkstationName",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "Name": "WindowsEvent",
+  "DisplayName": "WindowsEvent",
+  "LastModified": "\/Date(1538495175303+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "WindowsEventForwarding"
+  },
+  "Version": 1,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": false,
+  "DataVelocity": "FastMoving",
+  "RetentionPolicy": {
+    "RetentionType": "Large",
+    "PerformHardDeleteGrooming": false
+  },
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SourceSystem",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "Provider",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Channel",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Computer",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Task",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "EventLevel",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "EventLevelName",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Data",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "EventID",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "ManagementGroupName",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventData",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "RawEventData",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventOriginId",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Type",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "displayName": "AppServiceHTTPLogs",
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "LogManagement",
+  "description": "Logs generated through your application and pushed to Azure Monitoring.",
+  "name": "AppServiceHTTPLogs",
+  "isResourceCentric": "true",
+  "artifactsVersion": 1,
+  "icm-team": "Antares Management Loop",
+  "dataTypeId": "MICROSOFTWEB_APPSERVICEHTTPLOGS",
+  "inputFormat": "Json",
+  "defaultInputTransformationType": "Json",
+  "properties": [
+    {
+      "name": "TimeGenerated",
+      "description": "Time when event is generated",
+      "type": "DateTime",
+      "isDefaultDisplay": true,
+      "isFacet": true,
+      "dataSourcePropertyName": "time"
+    },
+    {
+      "name": "Category",
+      "description": "Log category name",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "isFacet": true,
+      "dataSourcePropertyName": "category"
+    },
+    {
+      "name": "CsMethod",
+      "description": "HTTP Verb on request",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "CsMethod",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "CsUriStem",
+      "description": "HTTP Target on request",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "CsUriStem",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "SPort",
+      "description": "Server port number",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "SPort",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "CIp",
+      "description": "IP address of the client",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "CIp",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "UserAgent",
+      "description": "User Agent on HTTP request",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "UserAgent",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "CsHost",
+      "description": "Host name header on HTTP request",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "CsHost",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "ScStatus",
+      "description": "HTTP Status Code",
+      "type": "Int",
+      "isDefaultDisplay": true,
+      "jsonPath": "ScStatus",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "ScSubStatus",
+      "description": "Substatus error code on HTTP request",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "ScSubStatus",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "ScWin32Status",
+      "description": "Windows status code on HTTP request",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "ScWin32Status",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "ScBytes",
+      "description": "Number of bytes sent by server",
+      "type": "Int",
+      "isDefaultDisplay": true,
+      "jsonPath": "ScBytes",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "CsBytes",
+      "description": "Number of bytes received by server",
+      "type": "Int",
+      "isDefaultDisplay": true,
+      "jsonPath": "CsBytes",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "TimeTaken",
+      "description": "Time taken by HTTP request",
+      "type": "Int",
+      "isDefaultDisplay": true,
+      "jsonPath": "TimeTaken",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "Result",
+      "description": "",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "Result",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "Cookie",
+      "description": "",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "Cookie",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "CsUriQuery",
+      "description": "",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "CsUriQuery",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "CsUsername",
+      "description": "",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "CsUsername",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "Referer",
+      "description": "",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "Referer",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "SourceSystem",
+      "description": "",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "SourceSystem",
+      "dataSourcePropertyName": "properties"
+    },
+    {
+      "name": "Type",
+      "description": "",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "jsonPath": "Type",
+      "dataSourcePropertyName": "properties"
+    }
+
+
+  ]
+}
+

@@ -1,0 +1,597 @@
+{
+  "Name": "ThreatIntelligenceIndicator",
+  "DisplayName": "ThreatIntelligenceIndicator",
+  "Description": "Threat Intelligence Indicator",
+  "LastModified": "\/Date(1565893871609+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "SecurityInsights"
+  },
+  "Version": 2,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": false,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "DisplayName": "TenantId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "TimeGenerated",
+      "DisplayName": "TimeGenerated",
+      "Description": "Time of indicator ingestion.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "SourceSystem",
+      "DisplayName": "SourceSystem",
+      "Description": "Source system.",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Action",
+      "DisplayName": "Action",
+      "Description": "Action to take on indicator match.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ActivityGroupNames",
+      "DisplayName": "ActivityGroupNames",
+      "Description": "Activity groups associated with indicator.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AdditionalInformation",
+      "DisplayName": "AdditionalInformation",
+      "Description": "Free text additional information for indicator.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ApplicationId",
+      "DisplayName": "ApplicationId",
+      "Description": "Application that submitted the indicator.",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AzureTenantId",
+      "DisplayName": "AzureTenantId",
+      "Description": "Tenant that submitted the indicator.",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ConfidenceScore",
+      "DisplayName": "ConfidenceScore",
+      "Description": "Confidence rating of the indicator, from 0 to 100.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Float"
+    },
+    {
+      "Name": "Description",
+      "DisplayName": "Description",
+      "Description": "Description of the indicator.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DiamondModel",
+      "DisplayName": "DiamondModel",
+      "Description": "Diamond model value for the indicator, one of adversary, capability, infrastructure or victim.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ExternalIndicatorId",
+      "DisplayName": "ExternalIndicatorId",
+      "Description": "Identifier for indicator from submitting system.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ExpirationDateTime",
+      "DisplayName": "ExpirationDateTime",
+      "Description": "Time of indicator expiration.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "IndicatorId",
+      "DisplayName": "IndicatorId",
+      "Description": "Unique identifier for indicator, calculated by receiving system.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ThreatType",
+      "DisplayName": "ThreatType",
+      "Description": "Threat type of indicator.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Active",
+      "DisplayName": "Active",
+      "Description": "Indicates whether indicator is active.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "KillChainActions",
+      "DisplayName": "KillChainActions",
+      "Description": "Indicates whether kill chain value 'actions' is set.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "KillChainC2",
+      "DisplayName": "KillChainC2",
+      "Description": "Indicates whether kill chain value 'C2' is set.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "KillChainDelivery",
+      "DisplayName": "KillChainDelivery",
+      "Description": "Indicates whether kill chain value 'delivery' is set.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "KillChainExploitation",
+      "DisplayName": "KillChainExploitation",
+      "Description": "Indicates whether kill chain value 'exploitation' is set.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "KillChainReconnaissance",
+      "DisplayName": "KillChainReconnaissance",
+      "Description": "Indicates whether kill chain value 'reconniassance' is set.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "KillChainWeaponization",
+      "DisplayName": "KillChainWeaponization",
+      "Description": "Indicates whether kill chain value 'weaponization' is set.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "KnownFalsePositives",
+      "DisplayName": "KnownFalsePositives",
+      "Description": "Text describing situations where indicator may cause false positives.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MalwareNames",
+      "DisplayName": "MalwareNames",
+      "Description": "List of malware names associated with indicator",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PassiveOnly",
+      "DisplayName": "PassiveOnly",
+      "Description": "Indicates whether the indicator should trigger an event that is visible to a user.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "ThreatSeverity",
+      "DisplayName": "ThreatSeverity",
+      "Description": "Indicator severity rating from 0 to 5. Higher value indicates greater severity.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "Tags",
+      "DisplayName": "Tags",
+      "Description": "Free form tags.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TrafficLightProtocolLevel",
+      "DisplayName": "TrafficLightProtocolLevel",
+      "Description": "Industry standard traffic light protocol level, one of white, green, amber or red.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailEncoding",
+      "DisplayName": "EmailEncoding",
+      "Description": "The email encoding observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailLanguage",
+      "DisplayName": "EmailLanguage",
+      "Description": "The email language observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailRecipient",
+      "DisplayName": "EmailRecipient",
+      "Description": "The email recipient observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailSenderAddress",
+      "DisplayName": "EmailSenderAddress",
+      "Description": "The email sender address observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailSenderName",
+      "DisplayName": "EmailSenderName",
+      "Description": "The email sender name observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailSourceDomain",
+      "DisplayName": "EmailSourceDomain",
+      "Description": "The email source domain observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailSourceIpAddress",
+      "DisplayName": "EmailSourceIpAddress",
+      "Description": "The email source IP address observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailSubject",
+      "DisplayName": "EmailSubject",
+      "Description": "The email subject observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EmailXMailer",
+      "DisplayName": "EmailXMailer",
+      "Description": "The email X-Mailer observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileCompileDateTime",
+      "DisplayName": "FileCompileDateTime",
+      "Description": "The file compilation time observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "FileCreatedDateTime",
+      "DisplayName": "FileCreatedDateTime",
+      "Description": "The file creation time observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "FileHashType",
+      "DisplayName": "FileHashType",
+      "Description": "The file hash type observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileHashValue",
+      "DisplayName": "FileHashValue",
+      "Description": "The file hash value observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileMutexName",
+      "DisplayName": "FileMutexName",
+      "Description": "The file mutex name observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileName",
+      "DisplayName": "FileName",
+      "Description": "The file name observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FilePacker",
+      "DisplayName": "FilePacker",
+      "Description": "The file packer observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FilePath",
+      "DisplayName": "FilePath",
+      "Description": "The file path observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileSize",
+      "DisplayName": "FileSize",
+      "Description": "The file size observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "FileType",
+      "DisplayName": "FileType",
+      "Description": "The file type observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DomainName",
+      "DisplayName": "DomainName",
+      "Description": "The domain name observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NetworkIP",
+      "DisplayName": "NetworkIP",
+      "Description": "The network IP address observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NetworkPort",
+      "DisplayName": "NetworkPort",
+      "Description": "The network port observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "NetworkDestinationAsn",
+      "DisplayName": "NetworkDestinationAsn",
+      "Description": "The network destination autonomous system number observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "NetworkDestinationCidrBlock",
+      "DisplayName": "NetworkDestinationCidrBlock",
+      "Description": "The network destination CIDR block observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NetworkDestinationIP",
+      "DisplayName": "NetworkDestinationIP",
+      "Description": "The network destination IP address.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NetworkCidrBlock",
+      "DisplayName": "NetworkCidrBlock",
+      "Description": "The network CIDR block observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NetworkDestinationPort",
+      "DisplayName": "NetworkDestinationPort",
+      "Description": "The network destination port observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "NetworkProtocol",
+      "DisplayName": "NetworkProtocol",
+      "Description": "The network protocol observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "NetworkSourceAsn",
+      "DisplayName": "NetworkSourceAsn",
+      "Description": "The network source autonomous system number observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "NetworkSourceCidrBlock",
+      "DisplayName": "NetworkSourceCidrBlock",
+      "Description": "The network source CIDR block observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NetworkSourceIP",
+      "DisplayName": "NetworkSourceIP",
+      "Description": "The network source IP address observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NetworkSourcePort",
+      "DisplayName": "NetworkSourcePort",
+      "Description": "The network source port observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "Url",
+      "DisplayName": "Url",
+      "Description": "The url observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserAgent",
+      "DisplayName": "UserAgent",
+      "Description": "The user agent observable.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "IndicatorProvider",
+      "DisplayName": "IndicatorProvider",
+      "Description": "The name of the entity that provided the indicator.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "SecurityInsights",
+  "description": "Audit logs for Dynamics 365 tenants collected by Azure Sentinel.",
+  "name": "Dynamics365Activity",
+  "displayName": "Dynamics365Activity",
+  "artifactsVersion": 7,
+  "isResourceCentric": true,
+  "IsChangeColumnInternalNameAllowed": true,
+  "icm-team": "Microsoft Azure Sentinel/Data Collection",
+  "dataTypeId": "DYNAMICS365_ACTIVITY_RESTAPI",
+  "resourceProviderType": "",
+  "outputFormat": "Json",
+  "inputFormat": "Textfile",
+  "categoryId": [ "security,audit" ],
+  "sampleInputRecordsFilePath": "SampleInputRecords/SentinelDynamics365SampleRecords.json",
+  "properties": [
+    {
+      "name": "SourceRecordId",
+      "type": "Guid",
+      "isHidden": false,
+      "isFacet": true,
+      "dataSourcePropertyName": "Id",
+      "description": "Unique identifier of an audit record"
+    },
+    {
+      "name": "UserAgent",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "UserAgent",
+      "description": "The user agent"
+    },
+    {
+      "name": "TimeGenerated",
+      "type": "DateTime",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "CreationTime",
+      "description": "The date and time in Coordinated Universal Time (UTC) when the user performed the activity",
+      "transformationType": "DateTime",
+      "DateTimeSystem": "Windows"
+    },
+    {
+      "name": "Operation",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "Operation",
+      "description": "The name of the operation that the user is performing"
+    },
+    {
+      "name": "OrganizationId",
+      "type": "Guid",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "OrganizationId",
+      "description": "The GUID for your organization's Office 365 tenant. This value will always be the same for your organization"
+    },
+    {
+      "name": "UserType",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "UserType",
+      "description": "The type of user that performed the operation. See the UserType table in Office 365 management activity api schema documentation for details on the types of users",
+      "transformationType": "MappedValue",
+      "mappedValues": {
+        "0": "Regular",
+        "1": "Reserved",
+        "2": "Admin",
+        "3": "DcAdmin",
+        "4": "System",
+        "5": "Application",
+        "6": "ServicePrincipal",
+        "7": "CustomPolicy",
+        "8": "SystemPolicy"
+      }
+    },
+    {
+      "name": "UserKey",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "UserKey",
+      "description": "An alternative ID for the user identified in the UserId property"
+    },
+    {
+      "name": "OfficeWorkload",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "Workload",
+      "description": "The Office 365 service where the activity occurred"
+    },
+    {
+      "name": "RecordType",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "RecordType",
+      "description": "The type of operation indicated by the record. See the AuditLogRecordType table in Office 365 management activity api schema documentation for details on the types of audit log records"
+    },
+    {
+      "name": "ResultStatus",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "ResultStatus",
+      "description": "Indicates whether the action (specified in the Operation property) was successful or not"
+    },
+    {
+      "name": "OriginalObjectId",
+      "type": "String",
+      "isFacet": false,
+      "isHidden": false,
+      "dataSourcePropertyName": "ObjectId",
+      "description": "The ObjectId for SharePoint and OneDrive about business activity"
+    },
+    {
+      "name": "UserId",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "UserId",
+      "description": "The UPN (User Principal Name) of the user who performed the action (specified in the Operation property) that resulted in the record being logged"
+    },
+    {
+      "name": "ClientIP",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataTypeHint": "IP",
+      "dataSourcePropertyName": "ClientIP",
+      "description": "The IP address of the device that was used when the activity was logged"
+    },
+    {
+      "name": "CorrelationId",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataTypeHint": "GUID",
+      "dataSourcePropertyName": "CorrelationId",
+      "description": "A unique value used to associate related rows"
+    },
+    {
+      "name": "CrmOrganizationUniqueName",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "CrmOrganizationUniqueName",
+      "description": "Unique name of the organization"
+    },
+    {
+      "name": "InstanceUrl",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataTypeHint": "URI",
+      "dataSourcePropertyName": "InstanceUrl",
+      "description": "URL to the instance"
+    },
+    {
+      "name": "ItemUrl",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataTypeHint": "URI",
+      "dataSourcePropertyName": "ItemUrl",
+      "description": "URL to the record emitting the log"
+    },
+    {
+      "name": "ItemType",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "ItemType",
+      "description": "The type of object that was accessed or modified. See the ItemType table for details on the types of objects"
+    },
+    {
+      "name": "Message",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "Message",
+      "description": "Name of the message called in the Dynamics365 SDK"
+    },
+    {
+      "name": "EntityId",
+      "type": "Guid",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "EntityId",
+      "description": "Unique identifier of the entity"
+    },
+    {
+      "name": "EntityName",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "EntityName",
+      "description": "Name of the entity in the organization"
+    },
+    {
+      "name": "Fields",
+      "type": "Dynamic",
+      "isFacet": false,
+      "isHidden": false,
+      "dataSourcePropertyName": "Fields",
+      "description": "JSON of Key Value pair reflecting the values that were created or updated"
+    },
+    {
+      "name": "Query",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "Query",
+      "description": "The query filter parameters used while executing the FetchXML"
+    },
+    {
+      "name": "QueryResults",
+      "type": "Dynamic",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "QueryResults",
+      "description": "One or multiple unique records returned by the Retrieve and Retrieve Multiple SDK message call"
+    },
+    {
+      "name": "ServiceContextId",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": true,
+      "dataTypeHint": "GUID",
+      "dataSourcePropertyName": "ServiceContextId",
+      "description": "The unique id associated with service context"
+    },
+    {
+      "name": "ServiceContextIdType",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": true,
+      "dataSourcePropertyName": "ServiceContextIdType",
+      "description": "Application defined token to define context use"
+    },
+    {
+      "name": "ServiceName",
+      "type": "String",
+      "isFacet": true,
+      "isHidden": false,
+      "dataSourcePropertyName": "ServiceName",
+      "description": "Name of the Service generating the log"
+    },
+    {
+      "name": "SystemUserId",
+      "type": "String",
+      "dataTypeHint": "GUID",
+      "internalName": "SystemUserIdString",
+      "isFacet": false,
+      "isHidden": false,
+      "dataSourcePropertyName": "SystemUserId",
+      "description": "Unique identifier of the user GUID in the organization"
+    }
+  ]
+}
+

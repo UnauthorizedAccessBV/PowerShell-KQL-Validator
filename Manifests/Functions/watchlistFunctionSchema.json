@@ -1,0 +1,20 @@
+{
+  "FunctionName": "_GetWatchlist",
+  "FunctionParameters": [
+    {
+      "Name": "watchlist",
+      "Type": "string",
+      "IsRequired": false
+    }
+  ],
+  "FunctionResultColumns": [
+    {
+      "Name": "name",
+      "Type": "string"
+    },
+    {
+      "Name": "SearchKey",
+      "Type":  "string"
+    }
+  ]
+}

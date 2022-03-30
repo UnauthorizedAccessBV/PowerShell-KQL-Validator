@@ -1,0 +1,168 @@
+{
+  "Name": "SecurityIoTRawEvent",
+  "DisplayName": "SecurityIoTRawEvent",
+  "LastModified": "\/Date(1549184816268+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "AzureSecurityOfThings"
+  },
+  "Version": 0,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": false,
+  "ICMTeamName": null,
+  "IsAppendOnly": false,
+  "RetentionPolicy": {
+    "RetentionType": "Small",
+    "PerformHardDeleteGrooming": false
+  },
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "IoTRawEventId",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "RawEventType",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RawEventName",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "TimeStamp",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "RawEventCategory",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "IsEmpty",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "AgentId",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AgentVersion",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AssociatedResourceId",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AzureSubscriptionId",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "DeviceId",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceSystem",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventDetails",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}

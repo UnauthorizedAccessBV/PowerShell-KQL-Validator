@@ -1,0 +1,244 @@
+{
+  "Name": "DnsEvents",
+  "DisplayName": "DnsEvents",
+  "LastModified": "\/Date(1505381584546+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "DnsAnalytics"
+  },
+  "Version": 1,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "RetentionPolicy": {
+    "RetentionType": "Large",
+    "PerformHardDeleteGrooming": false
+  },
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "Computer",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceSystem",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "EventId",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "SubType",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientIP",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Name",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "QueryType",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResultCode",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "Result",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "IPAddresses",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MaliciousIP",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "IndicatorThreatType",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Description",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Confidence",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Severity",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "ReportReferenceLink",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RemoteIPLongitude",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Float"
+    },
+    {
+      "Name": "RemoteIPLatitude",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Float"
+    },
+    {
+      "Name": "RemoteIPCountry",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Message",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TaskCategory",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}

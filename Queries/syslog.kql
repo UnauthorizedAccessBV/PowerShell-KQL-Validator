@@ -1,0 +1,4 @@
+Syslog
+| where ProcessName == "ERAServer"
+| where parse_json(SyslogMessage)['event_type'] != 'Audit_Event'
+| order by TimeGenerated desc

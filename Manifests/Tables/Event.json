@@ -1,0 +1,230 @@
+{
+  "Name": "Event",
+  "DisplayName": "Event",
+  "Description": "Events from Windows Event Log on Windows computers using the Log Analytics agent.",
+  "LastModified": "\/Date(1521823615685+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "LogManagement"
+  },
+  "Version": 2,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "RetentionPolicy": {
+    "RetentionType": "Large",
+    "PerformHardDeleteGrooming": false
+  },
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "Description": "ID of the worksapce that stores this record.",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SourceSystem",
+      "Description": "Type of agent the event was collected from. Possible values are OpsManager Linux and AzureStorage.",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Description": "Date and time the record was created.",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "Source",
+      "Description": "Source of the event.",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventLog",
+      "Description": "Name of the event log that the event was collected from.",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Computer",
+      "Description": "Name of the computer that the event was collected from.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventCategory",
+      "Description": "Category of the event.",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "EventLevel",
+      "Description": "Severity of the event in numeric form.",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "EventLevelName",
+      "Description": "Severity of the event in text form.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserName",
+      "Description": "User name of the account that logged the event.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Message",
+      "Description": "Event message for the different Languages. The language is defined by the LCID attribute.",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ParameterXml",
+      "Description": "Event parameter values in XML format.",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventData",
+      "Description": "All event data in raw format.",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventID",
+      "Description": "Number of the event.",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "RenderedDescription",
+      "Description": "Event description with parameter values.",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MG",
+      "Description": "ID of the management group for System Center Operations Manager agents.",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "TimeCollected",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "ManagementGroupName",
+      "Description": "Name of the management group for System Center Operations Manager agents. For other agents this value is AOI-<workspace ID>",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AzureDeploymentID",
+      "Description": "Azure deployment ID of the cloud service the log belongs to. Only populated when events are collected using Azure Diagnostics agent and collected from Azure storage.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Role",
+      "Description": "Role of the cloud service the log belongs to. Only populated when events are collected using Azure Diagnostics agent and collected from Azure storage.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}

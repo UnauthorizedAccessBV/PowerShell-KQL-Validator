@@ -1,0 +1,622 @@
+{
+  "Name": "ConfigurationChange",
+  "DisplayName": "ConfigurationChange",
+  "Description": "View changes to in-guest configuration data such as Files Software Registry Keys Windows Services and Linux Daemons",
+  "LastModified": "\/Date(1516648726562+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "ChangeTracking"
+  },
+  "Version": 6,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": false,
+  "RetentionPolicy": {
+    "RetentionType": "Small",
+    "PerformHardDeleteGrooming": false
+  },
+  "Properties": [
+    {
+      "Name": "Computer",
+      "Description": "",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ConfigChangeType",
+      "Description": "Type of configuration item that changed: Files Software WindowsServices Registry Daemons",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ChangeCategory",
+      "Description": "The type of change that occurred: Added Removed Modified",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceComputerId",
+      "Description": "",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SoftwareType",
+      "Description": "Type of the software: Application Package Update",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SoftwareName",
+      "Description": "Name of the software",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Previous",
+      "Description": "Previous value",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Current",
+      "Description": "Current value",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Publisher",
+      "Description": "Software publisher name",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Location",
+      "Description": "",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SoftwareDescription",
+      "Description": "Description of the software",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcChangeType",
+      "Description": "Service property that was changed",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcDisplayName",
+      "Description": "Human-frinedly name for the service",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcName",
+      "Description": "Name of the service",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcState",
+      "Description": "Current state of the service",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcPreviousState",
+      "Description": "Previous state of the service",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcStartupType",
+      "Description": "Startup behavior of the service",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcPreviousStartupType",
+      "Description": "Previous startup behavior of the service",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcAccount",
+      "Description": "User account that is associated with the service executable explicitly to provide a security context for the service",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcPreviousAccount",
+      "Description": "Previous user account that was associated with the sevice executable",
+      "Context": {
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcRunlevels",
+      "Description": "Modes used by the daemon for system operation",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcPreviousRunlevels",
+      "Description": "Previous modes used by the daemon for system operation",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcController",
+      "Description": "Parent process for the daemon",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcPreviousController",
+      "Description": "Previous parent process for the daemon",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcPath",
+      "Description": "The file path to the executable for the service",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcPreviousPath",
+      "Description": "Previous file path to the executable for the service",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SvcDescription",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LastSnapshotAge",
+      "Description": "Age of the last snapshot",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "BigInt"
+    },
+    {
+      "Name": "RegistryKey",
+      "Description": "Registry key name",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Hive",
+      "Description": "Registry hive for the changed registry key",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ValueName",
+      "Description": "Name of the value for the registry key being tracked",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ValueData",
+      "Description": "Data contained in the value and registry key being tracked",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PreviousValueData",
+      "Description": "Previous registry value data",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ValueType",
+      "Description": "Type of the value for the registry key being tracked",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PreviousValueType",
+      "Description": "Previous registry value type",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Name",
+      "Description": "",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileSystemPath",
+      "Description": "File system path for the changed file",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Size",
+      "Description": "Current size of the changed file",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "BigInt"
+    },
+    {
+      "Name": "PreviousSize",
+      "Description": "Previous file size",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "BigInt"
+    },
+    {
+      "Name": "DateCreated",
+      "Description": "Date that the item was created",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "PreviousDateCreated",
+      "Description": "Previous date created time",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "DateModified",
+      "Description": "Date that the item was last modified",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "PreviousDateModified",
+      "Description": "Previous date modified time",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "Attributes",
+      "Description": "",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PreviousAttributes",
+      "Description": "Previous attributes value",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Acls",
+      "Description": "The Access-Control List specifies which users or system processes are granted access to objects",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PreviousAcls",
+      "Description": "Previous Acl value",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FieldsChanged",
+      "Description": "Fields that were changed as part of the change record",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileContentBlobLink",
+      "Description": "Blob link for tracked file content",
+      "Context": {
+        "IsHidden": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Uri"
+    },
+    {
+      "Name": "PreviousFileContentBlobLink",
+      "Description": "Previous file content blob link value",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Uri"
+    },
+    {
+      "Name": "FileContentChecksum",
+      "Description": "Checksum of the file content",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "PreviousFileContentChecksum",
+      "Description": "Previous file content checksum value",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceSystem",
+      "Description": "",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MG",
+      "Description": "Id of the management group for System Center Operations Manager agents.",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ManagementGroupName",
+      "Description": "Name of a resource's assigned management group",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TenantId",
+      "Description": "ID of the worksapce that stores this record",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Description": "Date and time the record was created.",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "VMUUID",
+      "Description": "",
+      "Context": {
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    }
+  ]
+}

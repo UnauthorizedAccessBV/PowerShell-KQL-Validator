@@ -1,0 +1,4 @@
+Microsoft.Azure.Sentinel.KustoServices.*.nupkg
+KustoServices/**
+Modules/Packages/**
+Modules/Kusto.Language.dll

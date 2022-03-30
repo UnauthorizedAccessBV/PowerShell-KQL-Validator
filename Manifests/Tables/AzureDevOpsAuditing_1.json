@@ -1,0 +1,298 @@
+{
+  "Name": "AzureDevOpsAuditing",
+  "DisplayName": "AzureDevOpsAuditing",
+  "Description": "Azure DevOps Audit Logs.",
+  "LastModified": "\/Date(1585766471112+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "LogManagement"
+  },
+  "Version": 1,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": false,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "DisplayName": "TenantId",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "Id",
+      "DisplayName": "Id",
+      "Description": "The identifier for the audit event, unique across services.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CorrelationId",
+      "DisplayName": "CorrelationId",
+      "Description": "CorrelationId allows two or more auditing events to be grouped together. This happens when a single action causes a cascade of auditing entries. An example being project creation.",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ActivityId",
+      "DisplayName": "ActivityId",
+      "Description": "Unique identifier for the action that occurred.",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ActorCUID",
+      "DisplayName": "ActorCUID",
+      "Description": "A consistently unique identifier for the actor that caused the auditing event.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ActorUserId",
+      "DisplayName": "ActorUserId",
+      "Description": "The actor's user identifier.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ActorUPN",
+      "DisplayName": "ActorUPN",
+      "Description": "The actor's user principal name.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AuthenticationMechanism",
+      "DisplayName": "AuthenticationMechanism",
+      "Description": "Type of authentication used by the actor.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "DisplayName": "TimeGenerated",
+      "Description": "The time the auditing event occurred in UTC.",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "ScopeType",
+      "DisplayName": "ScopeType",
+      "Description": "The level (scope) that the event occurred.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ScopeDisplayName",
+      "DisplayName": "ScopeDisplayName",
+      "Description": "User friendly name for the scope level that an auditing event occurred at.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ScopeId",
+      "DisplayName": "ScopeId",
+      "Description": "The organization identifier.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ProjectId",
+      "DisplayName": "ProjectId",
+      "Description": "Unique identifier of the project that an auditing event occurred in. If not provided then the event isn't scoped to a particular project.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ProjectName",
+      "DisplayName": "ProjectName",
+      "Description": "Friendly name of the project that an auditing event occurred in. If not provided then the event isn't scoped to a particular project.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "IpAddress",
+      "DisplayName": "IpAddress",
+      "Description": "IP address where the event originated.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserAgent",
+      "DisplayName": "UserAgent",
+      "Description": "The user agent from the request.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OperationName",
+      "DisplayName": "OperationName",
+      "Description": "The unique identifier for the type of auditing event that occurred. For example, Git.CreateRepo identifies the an auditing event for Git repository creation.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Data",
+      "DisplayName": "Data",
+      "Description": "Additional data that's unique to the type of auditing event.",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "Details",
+      "DisplayName": "Details",
+      "Description": "Description of what happened.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Area",
+      "DisplayName": "Area",
+      "Description": "Part of the Azure DevOps product where the auditing event occurred.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Category",
+      "DisplayName": "Category",
+      "Description": "Type of action that occurred when the auditing event was logged.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CategoryDisplayName",
+      "DisplayName": "CategoryDisplayName",
+      "Description": "Type of action that occurred when the auditing event was logged.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ActorDisplayName",
+      "DisplayName": "ActorDisplayName",
+      "Description": "Display name of the user who initiated the auditing event to be logged.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceSystem",
+      "DisplayName": "SourceSystem",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}
+

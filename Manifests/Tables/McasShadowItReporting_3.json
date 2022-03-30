@@ -1,0 +1,179 @@
+{
+  "Name": "McasShadowItReporting",
+  "DisplayName": "McasShadowItReporting",
+  "Description": "McasShadowItReporting",
+  "LastModified": "\/Date(1565088416938+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "SecurityInsights"
+  },
+  "Version": 3,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": false,
+  "ICMTeamName": "Security ICM team",
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "DisplayName": "TenantId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SourceSystem",
+      "DisplayName": "SourceSystem",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "DisplayName": "TimeGenerated",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "StreamName",
+      "DisplayName": "StreamName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MachineName",
+      "DisplayName": "MachineName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MachineId",
+      "DisplayName": "MachineId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TotalEvents",
+      "DisplayName": "TotalEvents",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "BlockedEvents",
+      "DisplayName": "BlockedEvents",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "UploadedBytes",
+      "DisplayName": "UploadedBytes",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "TotalBytes",
+      "DisplayName": "TotalBytes",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "DownloadedBytes",
+      "DisplayName": "DownloadedBytes",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "IpAddress",
+      "DisplayName": "IpAddress",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserName",
+      "DisplayName": "UserName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EnrichedUserName",
+      "DisplayName": "EnrichedUserName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AppName",
+      "DisplayName": "AppName",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AppId",
+      "DisplayName": "AppId",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AppInstance",
+      "DisplayName": "AppInstance",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AppCategory",
+      "DisplayName": "AppCategory",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AppTags",
+      "DisplayName": "AppTags",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "AppScore",
+      "DisplayName": "AppScore",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    }
+  ]
+}

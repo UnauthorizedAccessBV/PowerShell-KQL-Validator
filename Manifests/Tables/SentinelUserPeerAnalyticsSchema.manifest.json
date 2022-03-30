@@ -1,0 +1,90 @@
+{
+  "displayName": "UserPeerAnalytics",
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "BehaviorAnalyticsInsights",
+  "description": "This analytics table, for a given user, provides a ranked list of peers. For example, if the user is Jane Smith, Peer Analytics calculates all of Jane's peers based on her mailing list, security groups, etc and provides the top 20 of her peers.",
+  "name": "UserPeerAnalytics",
+  "resourceProviderType": "Microsoft.SecurityInsights/BehaviorAnalyticsInsights",
+  "categoryId": [ "security" ],
+  "artifactsVersion": 5,
+  "icm-team": "SIPS ML Detections/SIPS ML Dev Team",
+  "dataTypeId": "SENTINEL_USER_PEER_ANALYTICS",
+  "sampleInputRecordsFilePath": "SampleInputRecords/SentinelUserPeerAnalyticsSampleRecords.json",
+  "properties": [
+    {
+      "name": "TimeGenerated",
+      "description": "Timestamp when the peer analytics is calculated",
+      "type": "DateTime",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "time"
+    },
+    {
+      "name": "AADTenantId",
+      "description": "Unique identifier of the Azure Tenant",
+      "displayName": "AADTenantId",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "aadtenantid",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique identifier of the primary user",
+      "displayName": "UserId",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "userid",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "UserPrincipalName",
+      "description": "User principal name of the primary user",
+      "displayName": "UserPrincipalName",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "userprincipalname"
+    },
+    {
+      "name": "UserName",
+      "description": "User name of the primary user",
+      "displayName": "UserName",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "username"
+    },
+    {
+      "name": "PeerUserId",
+      "description": "Unique identifier of the peer of the primary user",
+      "displayName": "PeerUserId",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "peeruserid",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "PeerUserPrincipalName",
+      "description": "User principal name of the peer of the primary user",
+      "displayName": "PeerUserPrincipalName",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "peeruserprincipalname"
+    },
+    {
+      "name": "PeerUserName",
+      "description": "User name of the peer of the primary user",
+      "displayName": "PeerUserName",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "peerusername"
+    },
+    {
+      "name": "Rank",
+      "description": "Rank of the peer with respect to the primary user",
+      "displayName": "Rank",
+      "type": "Int",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "rank"
+    }
+  ]
+}
+

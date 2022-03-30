@@ -1,0 +1,128 @@
+{
+  "displayName": "UserAccessAnalytics",
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "BehaviorAnalyticsInsights",
+  "description": "This analytics table, for a given user, provides the direct or transitive access to Azure resources. For example, if the user under investigation is Jane Smith, Access Analytics calculates all the Azure subscriptions that she either can access directly, via groups or serviceprincipals.",
+  "name": "UserAccessAnalytics",
+  "resourceProviderType": "Microsoft.SecurityInsights/BehaviorAnalyticsInsights",
+  "categoryId": [ "security" ],
+  "artifactsVersion": 5,
+  "icm-team": "SIPS ML Detections/SIPS ML Dev Team",
+  "dataTypeId": "SENTINEL_USER_ACCESS_ANALYTICS",
+  "sampleInputRecordsFilePath": "SampleInputRecords/SentinelUserAccessAnalyticsSampleRecords.json",
+  "properties": [
+    {
+      "name": "TimeGenerated",
+      "description": "Timestamp when the access analytics is calculated",
+      "type": "DateTime",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "time"
+    },
+    {
+      "name": "AADTenantId",
+      "description": "Unique identifier of the Azure Tenant",
+      "displayName": "AADTenantId",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "aadtenantid",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "SourceEntityType",
+      "description": "Type of entity which has access to the target entity",
+      "displayName": "SourceEntityType",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "sourceentitytype"
+    },
+    {
+      "name": "SourceEntityId",
+      "description": "Unique identifier of entity which has access to the target entity",
+      "displayName": "SourceEntityId",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "sourceentityid"
+    },
+    {
+      "name": "SourceEntityName",
+      "description": "Display name of entity which has access to the target entity",
+      "displayName": "SourceEntityName",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "sourceentityname"
+    },
+    {
+      "name": "TargetEntityType",
+      "description": "Type of the entity which the source entity can access",
+      "displayName": "TargetEntityType",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "targetentitytype"
+    },
+    {
+      "name": "TargetEntityId",
+      "description": "Unique identifier of the entity which the source entity can access",
+      "displayName": "TargetEntityId",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "targetentityid"
+    },
+    {
+      "name": "TargetEntityName",
+      "description": "Display name of the entity which the source entity can access",
+      "displayName": "TargetEntityName",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "targetentityname"
+    },
+    {
+      "name": "AccessLevel",
+      "description": "The level of access that the source entity has to the target entity",
+      "displayName": "AccessLevel",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "accesslevel"
+    },
+    {
+      "name": "AccessType",
+      "description": "The type of access that the source entity has to the target entity",
+      "displayName": "AccessType",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "accesstype"
+    },
+    {
+      "name": "AccessStartTime",
+      "description": "Timestamp when the source entity was provided access to the target entity",
+      "displayName": "AccessStartTime",
+      "type": "DateTime",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "accessstarttime"
+    },
+    {
+      "name": "AccessEndTime",
+      "description": "Timestamp when the source entity's access to the target entity was revoked",
+      "displayName": "AccessEndTime",
+      "type": "DateTime",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "accessendtime"
+    },
+    {
+      "name": "AccessEndReason",
+      "description": "Reason why the source entity's access to the target entity was revoked",
+      "displayName": "AccessEndReason",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "accessendreason"
+    },
+    {
+      "name": "AccessId",
+      "description": "Unique identifier for the access between source and target entity",
+      "displayName": "AccessId",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "accessid"
+    }
+  ]
+}
+

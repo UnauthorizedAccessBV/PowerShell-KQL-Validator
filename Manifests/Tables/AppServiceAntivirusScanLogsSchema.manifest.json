@@ -1,0 +1,65 @@
+{
+  "displayName": "AppServiceAntivirusScanAuditLogs",
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "LogManagement",
+  "description": "Report on any discovered virus or infected files that have been uploaded to their site.",
+  "name": "AppServiceAntivirusScanAuditLogs",
+  "isResourceCentric": "true",
+  "artifactsVersion": 3,
+  "icm-team": "App Service (Web Apps)/Antares Management Loop",
+  "dataTypeId": "MICROSOFTWEB_APPSERVICEANTIVIRUSSCANAUDITLOGS",
+  "sampleInputRecordsFilePath": "SampleInputRecords/AppServiceAntivirusScanLogsSample.json",
+  "resourceProviderType": "microsoft.web/sites",
+  "categoryId": [ "resources, audit" ],
+  "properties": [
+    {
+      "name": "TimeGenerated",
+      "description": "Time when event is generated",
+      "type": "DateTime",
+      "isDefaultDisplay": true,
+      "isFacet": true,
+      "dataSourcePropertyName": "time"
+    },
+    {
+      "name": "ScanStatus",
+      "description": "Status of the scan",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "Properties",
+      "jsonPath": "ScanStatus"
+    },
+    {
+      "name": "TotalFilesScanned",
+      "description": "Total number of scanned files",
+      "type": "Int",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "Properties",
+      "jsonPath": "TotalFilesScanned"
+    },
+    {
+      "name": "NumberOfInfectedFiles",
+      "description": "Total number of files infected with virus",
+      "type": "Int",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "Properties",
+      "jsonPath": "NumberOfInfectedFiles"
+    },
+    {
+      "name": "ListOfInfectedFiles",
+      "description": "List of each virus file path",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "Properties",
+      "jsonPath": "ListOfInfectedFiles"
+    },
+    {
+      "name": "ErrorMessage",
+      "description": "Error Message",
+      "type": "String",
+      "isDefaultDisplay": true,
+      "dataSourcePropertyName": "Properties",
+      "jsonPath": "ErrorMessage"
+    }
+  ]
+}
+

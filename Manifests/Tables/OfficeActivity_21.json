@@ -1,0 +1,1253 @@
+{
+  "Name": "OfficeActivity",
+  "DisplayName": "OfficeActivity",
+  "Description": "Audit logs for Office 365 tenants collected by Azure Sentinel. Including Exchange, SharePoint and Teams logs.",
+  "LastModified": "\/Date(1591899567143+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "Office365,SecurityInsights"
+  },
+  "Version": 21,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "DisplayName": "TenantId",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "Application",
+      "DisplayName": "Application",
+      "Description": "The application name",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserDomain",
+      "DisplayName": "UserDomain",
+      "Description": "The domain of the user",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserAgent",
+      "DisplayName": "UserAgent",
+      "Description": "The user agent",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RecordType",
+      "DisplayName": "RecordType",
+      "Description": "The type of operation indicated by the record. See the AuditLogRecordType table for details on the types of audit log records",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "DisplayName": "TimeGenerated",
+      "Description": "The date and time in Coordinated Universal Time (UTC) when the user performed the activity",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "Operation",
+      "DisplayName": "Operation",
+      "Description": "The name of the operation that the user is performing",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OrganizationId",
+      "DisplayName": "OrganizationId",
+      "Description": "The GUID for your organization's Office 365 tenant. This value will always be the same for your organization",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "OrganizationId_",
+      "DisplayName": "OrganizationId_",
+      "Description": "The GUID for your organization's Office 365 tenant. This value will always be the same for your organization",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "UserType",
+      "DisplayName": "UserType",
+      "Description": "The type of user that performed the operation. See the UserType table for  details on the types of users",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserKey",
+      "DisplayName": "UserKey",
+      "Description": "An alternative ID for the user identified in the UserId property",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OfficeWorkload",
+      "DisplayName": "OfficeWorkload",
+      "Description": "The Office 365 service where the activity occurred",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResultStatus",
+      "DisplayName": "ResultStatus",
+      "Description": "Indicates whether the action (specified in the Operation property) was successful or not",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResultReasonType",
+      "DisplayName": "ResultReasonType",
+      "Description": "Reason for the result reported in ResultType",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OfficeObjectId",
+      "DisplayName": "OfficeObjectId",
+      "Description": "For SharePoint and OneDrive for Business activity",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserId",
+      "DisplayName": "UserId",
+      "Description": "The UPN (User Principal Name) of the user who performed the action (specified in the Operation property) that resulted in the record being logged",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserId_",
+      "DisplayName": "UserId_",
+      "Description": "The UPN (User Principal Name) of the user who performed the action (specified in the Operation property) that resulted in the record being logged",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientIP",
+      "DisplayName": "ClientIP",
+      "Description": "The IP address of the device that was used when the activity was logged",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientIP_",
+      "DisplayName": "ClientIP_",
+      "Description": "The IP address of the device that was used when the activity was logged",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Scope",
+      "DisplayName": "Scope",
+      "Description": "Was this event created by a hosted O365 service or an on-premises server",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Site_",
+      "DisplayName": "Site_",
+      "Description": "The GUID of the site where the file or folder accessed by the user is located",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ItemType",
+      "DisplayName": "ItemType",
+      "Description": "The type of object that was accessed or modified. See the ItemType table for details on the types of objects",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventSource",
+      "DisplayName": "EventSource",
+      "Description": "Identifies that an event occurred in SharePoint. Possible values are SharePoint or ObjectModel",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Source_Name",
+      "DisplayName": "Source_Name",
+      "Description": "The entity that triggered the audited operation. Possible values are SharePoint or ObjectModel",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MachineDomainInfo",
+      "DisplayName": "MachineDomainInfo",
+      "Description": "Information about device sync operations",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MachineId",
+      "DisplayName": "MachineId",
+      "Description": "Information about device sync operations",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Site_Url",
+      "DisplayName": "Site_Url",
+      "Description": "The URL of the site where the file or folder accessed by the user is located",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Site_Url_",
+      "DisplayName": "Site_Url_",
+      "Description": "The URL of the site where the file or folder accessed by the user is located",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceRelativeUrl",
+      "DisplayName": "SourceRelativeUrl",
+      "Description": "The URL of the folder that contains the file accessed by the user",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceRelativeUrl_",
+      "DisplayName": "SourceRelativeUrl_",
+      "Description": "The URL of the folder that contains the file accessed by the user",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceFileName",
+      "DisplayName": "SourceFileName",
+      "Description": "The name of the file or folder accessed by the user",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceFileName_",
+      "DisplayName": "SourceFileName_",
+      "Description": "The name of the file or folder accessed by the user",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceFileExtension",
+      "DisplayName": "SourceFileExtension",
+      "Description": "The file extension of the file that was accessed by the user",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestinationRelativeUrl",
+      "DisplayName": "DestinationRelativeUrl",
+      "Description": "The URL of the destination folder where a file is copied or moved",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestinationFileName",
+      "DisplayName": "DestinationFileName",
+      "Description": "The name of the file that is copied or moved",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestinationFileExtension",
+      "DisplayName": "DestinationFileExtension",
+      "Description": "The file extension of a file that is copied or moved",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserSharedWith",
+      "DisplayName": "UserSharedWith",
+      "Description": "The user that a resource was shared with",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SharingType",
+      "DisplayName": "SharingType",
+      "Description": "The type of sharing permissions that were assigned to the user that the resource was shared with. This user is identified by the UserSharedWith parameter",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CustomEvent",
+      "DisplayName": "CustomEvent",
+      "Description": "Optional string for custom events",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Event_Data",
+      "DisplayName": "Event_Data",
+      "Description": "Optional payload for custom events",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ModifiedObjectResolvedName",
+      "DisplayName": "ModifiedObjectResolvedName",
+      "Description": "This is the user friendly name of the object that was modified by the cmdlet",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Parameters",
+      "DisplayName": "Parameters",
+      "Description": "The name and value for all parameters that were used with the cmdlet that is identified in the Operations property",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ExternalAccess",
+      "DisplayName": "ExternalAccess",
+      "Description": "Specifies whether the cmdlet was run by a user in your organization",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OriginatingServer",
+      "DisplayName": "OriginatingServer",
+      "Description": "The name of the server from which the cmdlet was executed",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OrganizationName",
+      "DisplayName": "OrganizationName",
+      "Description": "The name of the tenant",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Logon_Type",
+      "DisplayName": "Logon_Type",
+      "Description": "Indicates the type of user who accessed the mailbox and performed the operation that was logged",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "InternalLogonType",
+      "DisplayName": "InternalLogonType",
+      "Description": "Reserved for internal use",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "MailboxGuid",
+      "DisplayName": "MailboxGuid",
+      "Description": "The Exchange GUID of the mailbox that was accessed",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MailboxOwnerUPN",
+      "DisplayName": "MailboxOwnerUPN",
+      "Description": "The email address of the person who owns the mailbox that was accessed",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MailboxOwnerSid",
+      "DisplayName": "MailboxOwnerSid",
+      "Description": "The SID of the mailbox owner",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MailboxOwnerMasterAccountSid",
+      "DisplayName": "MailboxOwnerMasterAccountSid",
+      "Description": "Mailbox owner account's master account SID",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LogonUserSid",
+      "DisplayName": "LogonUserSid",
+      "Description": "The SID of the user who performed the operation",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LogonUserDisplayName",
+      "DisplayName": "LogonUserDisplayName",
+      "Description": "The user-friendly name of the user who performed the operation",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientInfoString",
+      "DisplayName": "ClientInfoString",
+      "Description": "Information about the email client that was used to perform the operation",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Client_IPAddress",
+      "DisplayName": "Client_IPAddress",
+      "Description": "The IP address of the device that was used when the operation was logged",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientMachineName",
+      "DisplayName": "ClientMachineName",
+      "Description": "The machine name that hosts the Outlook client",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientProcessName",
+      "DisplayName": "ClientProcessName",
+      "Description": "The email client that was used to access the mailbox",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ClientVersion",
+      "DisplayName": "ClientVersion",
+      "Description": "The version of the email client ",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Folder",
+      "DisplayName": "Folder",
+      "Description": "The folder where a group of items is located",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CrossMailboxOperations",
+      "DisplayName": "CrossMailboxOperations",
+      "Description": "Indicates if the operation involved more than one mailbox",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Bool"
+    },
+    {
+      "Name": "DestMailboxId",
+      "DisplayName": "DestMailboxId",
+      "Description": "Set only if the CrossMailboxOperations parameter is True",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "DestMailboxOwnerUPN",
+      "DisplayName": "DestMailboxOwnerUPN",
+      "Description": "Set only if the CrossMailboxOperations parameter is True",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestMailboxOwnerSid",
+      "DisplayName": "DestMailboxOwnerSid",
+      "Description": "Set only if the CrossMailboxOperations parameter is True",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestMailboxOwnerMasterAccountSid",
+      "DisplayName": "DestMailboxOwnerMasterAccountSid",
+      "Description": "Set only if the CrossMailboxOperations parameter is True",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestFolder",
+      "DisplayName": "DestFolder",
+      "Description": "The destination folder",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Folders",
+      "DisplayName": "Folders",
+      "Description": "Information about the source folders involved in an operation",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AffectedItems",
+      "DisplayName": "AffectedItems",
+      "Description": "Information about each item in the group",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Item",
+      "DisplayName": "Item",
+      "Description": "Represents the item upon which the operation was performed",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ModifiedProperties",
+      "DisplayName": "ModifiedProperties",
+      "Description": "The property is included for admin events, such as adding a user as a member of a site or a site collection admin group",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SendAsUserSmtp",
+      "DisplayName": "SendAsUserSmtp",
+      "Description": "SMTP address of the user who is being impersonated",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SendAsUserMailboxGuid",
+      "DisplayName": "SendAsUserMailboxGuid",
+      "Description": "The Exchange GUID of the mailbox that was accessed to send email as",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SendOnBehalfOfUserSmtp",
+      "DisplayName": "SendOnBehalfOfUserSmtp",
+      "Description": "SMTP address of the user on whose behalf the email is sent",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SendonBehalfOfUserMailboxGuid",
+      "DisplayName": "SendonBehalfOfUserMailboxGuid",
+      "Description": "The Exchange GUID of the mailbox that was accessed to send mail on behalf of",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ExtendedProperties",
+      "DisplayName": "ExtendedProperties",
+      "Description": "The extended properties of the Azure AD event",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Client",
+      "DisplayName": "Client",
+      "Description": "Details about the client device, device OS, and device browser that was used for the of the account login event",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LoginStatus",
+      "DisplayName": "LoginStatus",
+      "Description": "This property is from OrgIdLogon.LoginStatus directly. The mapping of various interesting logon failures could be done by alerting algorithms",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "Actor",
+      "DisplayName": "Actor",
+      "Description": "The user or service principal that performed the action",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ActorContextId",
+      "DisplayName": "ActorContextId",
+      "Description": "The GUID of the organization that the actor belongs to",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ActorContextId_",
+      "DisplayName": "ActorContextId_",
+      "Description": "The GUID of the organization that the actor belongs to",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ActorIpAddress",
+      "DisplayName": "ActorIpAddress",
+      "Description": "The actor's IP address in IPV4 or IPV6 address format",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "InterSystemsId",
+      "DisplayName": "InterSystemsId",
+      "Description": "The GUID that track the actions across components within the Office 365 service",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "IntraSystemId",
+      "DisplayName": "IntraSystemId",
+      "Description": "The GUID that's generated by Azure Active Directory to track the action",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SupportTicketId",
+      "DisplayName": "SupportTicketId",
+      "Description": "The customer support ticket ID for the action in 'act-on-behalf-of' situations",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetContextId",
+      "DisplayName": "TargetContextId",
+      "Description": "The GUID of the organization that the targeted user belongs to",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "DataCenterSecurityEventType",
+      "DisplayName": "DataCenterSecurityEventType",
+      "Description": "The type of dmdlet event in lock box",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "EffectiveOrganization",
+      "DisplayName": "EffectiveOrganization",
+      "Description": "The name of the tenant that the elevation/cmdlet was targeted at",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ElevationTime",
+      "DisplayName": "ElevationTime",
+      "Description": "The start time of the elevation",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "ElevationApprover",
+      "DisplayName": "ElevationApprover",
+      "Description": "The name of a Microsoft manager",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ElevationApprovedTime",
+      "DisplayName": "ElevationApprovedTime",
+      "Description": "The timestamp for when the elevation was approved",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "ElevationRequestId",
+      "DisplayName": "ElevationRequestId",
+      "Description": "A unique identifier for the elevation request",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ElevationRole",
+      "DisplayName": "ElevationRole",
+      "Description": "The role the elevation was requested for",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ElevationDuration",
+      "DisplayName": "ElevationDuration",
+      "Description": "The duration for which the elevation was active (in Hours)",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "GenericInfo",
+      "DisplayName": "GenericInfo",
+      "Description": "Used for comments and other generic information",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceSystem",
+      "DisplayName": "SourceSystem",
+      "Description": "The source system name",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OfficeId",
+      "DisplayName": "OfficeId",
+      "Description": "Unique identifier of an audit record",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SourceRecordId",
+      "DisplayName": "SourceRecordId",
+      "Description": "Unique identifier of an audit record",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "AzureActiveDirectory_EventType",
+      "DisplayName": "AzureActiveDirectory_EventType",
+      "Description": "The type of Azure AD event",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AADTarget",
+      "DisplayName": "AADTarget",
+      "Description": "The user that the action (identified by the Operation property) was performed on",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Start_Time",
+      "DisplayName": "Start_Time",
+      "Description": "The date and time at which the cmdlet was executed",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "OfficeTenantId",
+      "DisplayName": "OfficeTenantId",
+      "Description": "The office tenant id",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OfficeTenantId_",
+      "DisplayName": "OfficeTenantId_",
+      "Description": "The office tenant id",
+      "Context": {
+        "IsHidden": "True",
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetUserOrGroupName",
+      "DisplayName": "TargetUserOrGroupName",
+      "Description": "Stores the UPN or name of the target user or group that a resource was shared with",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TargetUserOrGroupType",
+      "DisplayName": "TargetUserOrGroupType",
+      "Description": "Identifies whether the target user or group is a Member, Guest, Group, or Partner",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MessageId",
+      "DisplayName": "MessageId",
+      "Description": "An identifier for a chat or channel message",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Members",
+      "DisplayName": "Members",
+      "Description": "A list of users within a Team",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "TeamName",
+      "DisplayName": "TeamName",
+      "Description": "The name of the team being audited",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TeamGuid",
+      "DisplayName": "TeamGuid",
+      "Description": "A unique identifier for the team being audited",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ChannelType",
+      "DisplayName": "ChannelType",
+      "Description": "The type of channel being audited (Standard/Private)",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ChannelName",
+      "DisplayName": "ChannelName",
+      "Description": "The name of the channel being audited",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ChannelGuid",
+      "DisplayName": "ChannelGuid",
+      "Description": "A unique identifier for the channel being audited",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ExtraProperties",
+      "DisplayName": "ExtraProperties",
+      "Description": "A list of extra properties",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "AddOnType",
+      "DisplayName": "AddOnType",
+      "Description": "The type of add-on that generated this event",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AddonName",
+      "DisplayName": "AddonName",
+      "Description": "The name of the add-on that generated this event",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TabType",
+      "DisplayName": "TabType",
+      "Description": "The type of tab that generated this event",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Name",
+      "DisplayName": "Name",
+      "Description": "Only present for settings events. Name of the setting that changed",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OldValue",
+      "DisplayName": "OldValue",
+      "Description": "Only present for settings events. Old value of the setting",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "NewValue",
+      "DisplayName": "NewValue",
+      "Description": "Only present for settings events. New value of the setting",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ItemName",
+      "DisplayName": "ItemName",
+      "Description": "The string in the Subject field of the email message",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ChatThreadId",
+      "DisplayName": "ChatThreadId",
+      "Description": "The Id of the chat thread",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CommunicationType",
+      "DisplayName": "CommunicationType",
+      "Description": "The type of communications that was conducted",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AADGroupId",
+      "DisplayName": "AADGroupId",
+      "Description": "Azure Active Directory group id",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    }
+  ]
+}

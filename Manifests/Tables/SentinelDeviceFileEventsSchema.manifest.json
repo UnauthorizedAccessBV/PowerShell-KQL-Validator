@@ -1,0 +1,412 @@
+{
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "SecurityInsights",
+  "name": "DeviceFileEvents",
+  "displayName": "DeviceFileEvents",
+  "description": "This table is part of Microsoft Defender for Endpoints with Azure Sentinel. This table contains File creation, modification, and other file system events.",
+  "artifactsVersion": 14,
+  "isResourceCentric": false,
+  "IsChangeColumnInternalNameAllowed": true,
+  "icm-team": "Microsoft Azure Sentinel/Data Collection",
+  "dataTypeId": "TENANTMICROSOFTWINDOWSDEFENDERATP_ADVANCEDHUNTINGDEVICEFILEEVENTS",
+  "resourceProviderType": "Microsoft.SecurityInsights/dataCollection",
+  "categoryId": "security",
+  "sampleInputRecordsFilePath": "SampleInputRecords/DeviceFileEventsSample.json",
+  "properties": [
+    {
+      "name": "ActionType",
+      "displayName": "ActionType",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Type of activity that triggered the event.",
+      "jsonPath": "ActionType"
+    },
+    {
+      "name": "AdditionalFields",
+      "displayName": "AdditionalFields",
+      "internalName": "AdditionalFields_Dynamic",
+      "type": "Dynamic",
+      "dataSourcePropertyName": "properties",
+      "description": "Additional information about the entity or event.",
+      "jsonPath": "AdditionalFields"
+    },
+    {
+      "name": "AppGuardContainerId",
+      "displayName": "AppGuardContainerId",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Identifier for the virtualized container used by Application Guard to isolate browser activity.",
+      "jsonPath": "AppGuardContainerId",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "DeviceId",
+      "displayName": "DeviceId",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Unique identifier for the device in the service.",
+      "jsonPath": "DeviceId",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "DeviceName",
+      "displayName": "DeviceName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Fully qualified domain name (FQDN) of the device.",
+      "jsonPath": "DeviceName"
+    },
+    {
+      "name": "FileName",
+      "displayName": "FileName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Name of the file that the recorded action was applied to.",
+      "jsonPath": "FileName"
+    },
+    {
+      "name": "FileOriginIP",
+      "displayName": "FileOriginIP",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "IP address where the file was downloaded from.",
+      "jsonPath": "FileOriginIP",
+      "dataTypeHint": "IP"
+    },
+    {
+      "name": "FileOriginReferrerUrl",
+      "displayName": "FileOriginReferrerUrl",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "URL of the web page that links to the downloaded file.",
+      "jsonPath": "FileOriginReferrerUrl",
+      "dataTypeHint": "URI"
+    },
+    {
+      "name": "FileOriginUrl",
+      "displayName": "FileOriginUrl",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "URL where the file was downloaded from.",
+      "jsonPath": "FileOriginUrl",
+      "dataTypeHint": "URI"
+    },
+    {
+      "name": "FileSize",
+      "displayName": "FileSize",
+      "type": "BigInt",
+      "internalName": "FileSize_BigInt",
+      "dataSourcePropertyName": "properties",
+      "description": "Size of the file in bytes.",
+      "jsonPath": "FileSize"
+    },
+    {
+      "name": "FolderPath",
+      "displayName": "FolderPath",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Folder containing the file that the recorded action was applied to.",
+      "jsonPath": "FolderPath"
+    },
+    {
+      "name": "InitiatingProcessAccountDomain",
+      "displayName": "InitiatingProcessAccountDomain",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Domain of the account that ran the process responsible for the event.",
+      "jsonPath": "InitiatingProcessAccountDomain"
+    },
+    {
+      "name": "InitiatingProcessAccountName",
+      "displayName": "InitiatingProcessAccountName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "User name of the account that ran the process responsible for the event.",
+      "jsonPath": "InitiatingProcessAccountName"
+    },
+    {
+      "name": "InitiatingProcessAccountObjectId",
+      "displayName": "InitiatingProcessAccountObjectId",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Azure AD object ID of the user account that ran the process responsible for the event.",
+      "jsonPath": "InitiatingProcessAccountObjectId",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "InitiatingProcessAccountSid",
+      "displayName": "InitiatingProcessAccountSid",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Security Identifier (SID) of the account that ran the process responsible for the event.",
+      "jsonPath": "InitiatingProcessAccountSid"
+    },
+    {
+      "name": "InitiatingProcessAccountUpn",
+      "displayName": "InitiatingProcessAccountUpn",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "User principal name (UPN) of the account that ran the process responsible for the event.",
+      "jsonPath": "InitiatingProcessAccountUpn"
+    },
+    {
+      "name": "InitiatingProcessCommandLine",
+      "displayName": "InitiatingProcessCommandLine",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Command line used to run the process that initiated the event.",
+      "jsonPath": "InitiatingProcessCommandLine"
+    },
+    {
+      "name": "InitiatingProcessFileName",
+      "displayName": "InitiatingProcessFileName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Name of the process that initiated the event.",
+      "jsonPath": "InitiatingProcessFileName"
+    },
+    {
+      "name": "InitiatingProcessFolderPath",
+      "displayName": "InitiatingProcessFolderPath",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Folder containing the process (image file) that initiated the event.",
+      "jsonPath": "InitiatingProcessFolderPath"
+    },
+    {
+      "name": "InitiatingProcessId",
+      "displayName": "InitiatingProcessId",
+      "internalName": "InitiatingProcessId_BigInt",
+      "type": "BigInt",
+      "dataSourcePropertyName": "properties",
+      "description": "Process ID (PID) of the process that initiated the event.",
+      "jsonPath": "InitiatingProcessId"
+    },
+    {
+      "name": "InitiatingProcessIntegrityLevel",
+      "displayName": "InitiatingProcessIntegrityLevel",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Integrity level of the process that initiated the event. Windows assigns integrity levels to processes based on certain characteristics, such as if they were launched from an internet download. These integrity levels influence permissions to resources..",
+      "jsonPath": "InitiatingProcessIntegrityLevel"
+    },
+    {
+      "name": "InitiatingProcessMD5",
+      "displayName": "InitiatingProcessMD5",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "MD5 hash of the process (image file) that initiated the event.",
+      "jsonPath": "InitiatingProcessMD5"
+    },
+    {
+      "name": "InitiatingProcessParentFileName",
+      "displayName": "InitiatingProcessParentFileName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Name of the parent process that spawned the process responsible for the event.",
+      "jsonPath": "InitiatingProcessParentFileName"
+    },
+    {
+      "name": "InitiatingProcessParentId",
+      "internalName": "InitiatingProcessParentId_BigInt",
+      "displayName": "InitiatingProcessParentId",
+      "type": "BigInt",
+      "dataSourcePropertyName": "properties",
+      "description": "Process ID (PID) of the parent process that spawned the process responsible for the event.",
+      "jsonPath": "InitiatingProcessParentId"
+    },
+    {
+      "name": "InitiatingProcessSHA1",
+      "displayName": "InitiatingProcessSHA1",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "SHA-1 hash of the process (image file) that initiated the event.",
+      "jsonPath": "InitiatingProcessSHA1"
+    },
+    {
+      "name": "InitiatingProcessSHA256",
+      "displayName": "InitiatingProcessSHA256",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "SHA-256 hash of the process (image file) that initiated the event. This field is usually not populated - use the SHA1 column when available..",
+      "jsonPath": "InitiatingProcessSHA256"
+    },
+    {
+      "name": "InitiatingProcessTokenElevation",
+      "displayName": "InitiatingProcessTokenElevation",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Token type indicating the presence or absence of User Access Control (UAC) privilege elevation applied to the process that initiated the event.",
+      "jsonPath": "InitiatingProcessTokenElevation"
+    },
+    {
+      "name": "IsAzureInfoProtectionApplied",
+      "displayName": "IsAzureInfoProtectionApplied",
+      "type": "Bool",
+      "dataSourcePropertyName": "properties",
+      "description": "Indicates whether the file is encrypted by Azure Information Protection.",
+      "jsonPath": "IsAzureInfoProtectionApplied"
+    },
+    {
+      "name": "MD5",
+      "displayName": "MD5",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "MD5 hash of the file that the recorded action was applied to.",
+      "jsonPath": "MD5"
+    },
+    {
+      "name": "MachineGroup",
+      "displayName": "MachineGroup",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Machine group of the machine. This group is used by role-based access control to determine access to the machine.",
+      "jsonPath": "MachineGroup"
+    },
+    {
+      "name": "PreviousFileName",
+      "displayName": "PreviousFileName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Original name of the file that was renamed as a result of the action.",
+      "jsonPath": "PreviousFileName"
+    },
+    {
+      "name": "PreviousFolderPath",
+      "displayName": "PreviousFolderPath",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Original folder containing the file before the recorded action was applied.",
+      "jsonPath": "PreviousFolderPath"
+    },
+    {
+      "name": "ReportId",
+      "displayName": "ReportId",
+      "type": "BigInt",
+      "internalName": "ReportId_BigInt",
+      "dataSourcePropertyName": "properties",
+      "description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the ComputerName and EventTime columns..",
+      "jsonPath": "ReportId"
+    },
+    {
+      "name": "RequestAccountDomain",
+      "displayName": "RequestAccountDomain",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Domain of the account used to remotely initiate the activity.",
+      "jsonPath": "RequestAccountDomain"
+    },
+    {
+      "name": "RequestAccountName",
+      "displayName": "RequestAccountName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "User name of account used to remotely initiate the activity.",
+      "jsonPath": "RequestAccountName"
+    },
+    {
+      "name": "RequestAccountSid",
+      "displayName": "RequestAccountSid",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Security Identifier (SID) of the account used to remotely initiate the activity.",
+      "jsonPath": "RequestAccountSid"
+    },
+    {
+      "name": "RequestProtocol",
+      "displayName": "RequestProtocol",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Network protocol, if applicable, used to initiate the activity: Unknown, Local, SMB, or NFS.",
+      "jsonPath": "RequestProtocol"
+    },
+    {
+      "name": "RequestSourceIP",
+      "displayName": "RequestSourceIP",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "IPv4 or IPv6 address of the remote device that initiated the activity.",
+      "jsonPath": "RequestSourceIP",
+      "dataTypeHint": "IP"
+    },
+    {
+      "name": "RequestSourcePort",
+      "displayName": "RequestSourcePort",
+      "type": "Int",
+      "dataSourcePropertyName": "properties",
+      "description": "Source port on the remote device that initiated the activity.",
+      "jsonPath": "RequestSourcePort"
+    },
+    {
+      "name": "SHA1",
+      "displayName": "SHA1",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "SHA-1 hash of the file that the recorded action was applied to.",
+      "jsonPath": "SHA1"
+    },
+    {
+      "name": "SHA256",
+      "displayName": "SHA256",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "SHA-256 of the file that the recorded action was applied to.",
+      "jsonPath": "SHA256"
+    },
+    {
+      "name": "SensitivityLabel",
+      "displayName": "SensitivityLabel",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Label applied to an email, file, or other content to classify it for information protection.",
+      "jsonPath": "SensitivityLabel"
+    },
+    {
+      "name": "SensitivitySubLabel",
+      "displayName": "SensitivitySubLabel",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Sublabel applied to an email, file, or other content to classify it for information protection; sensitivity sublabels are grouped under sensitivity labels but are treated independently.",
+      "jsonPath": "SensitivitySubLabel"
+    },
+    {
+      "name": "ShareName",
+      "displayName": "ShareName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Name of shared folder containing the file.",
+      "jsonPath": "ShareName"
+    },
+    {
+      "name": "TimeGenerated",
+      "displayName": "TimeGenerated",
+      "type": "DateTime",
+      "dataSourcePropertyName": "properties",
+      "description": "Date and time when the record was generated.",
+      "jsonPath": "Timestamp",
+      "isDefaultDisplay": true
+    },
+    {
+      "name": "Timestamp",
+      "displayName": "Timestamp",
+      "type": "DateTime",
+      "dataSourcePropertyName": "properties",
+      "description": "Date and time when the record was generated. This is identical to TimeGenerated and added for query portability from MDATP Advanced Hunting.",
+      "jsonPath": "Timestamp",
+      "isHidden": true,
+      "isDefaultDisplay": false
+    },
+    {
+      "name": "InitiatingProcessParentCreationTime",
+      "displayName": "InitiatingProcessParentCreationTime",
+      "type": "DateTime",
+      "description": "Date and time when the parent of the process responsible for the event was started."
+    },
+    {
+      "name": "InitiatingProcessCreationTime",
+      "displayName": "InitiatingProcessCreationTime",
+      "type": "DateTime",
+      "description": "Date and time when the parent of the process responsible for the event was started."
+    }
+  ]
+}

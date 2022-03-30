@@ -1,0 +1,4 @@
+SecurityIncident
+| order by TimeGenerated desc
+| project Title, IncidentUrl
+| take 10

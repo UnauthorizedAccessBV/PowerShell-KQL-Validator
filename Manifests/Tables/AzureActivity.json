@@ -1,0 +1,291 @@
+{
+  "Name": "AzureActivity",
+  "DisplayName": "AzureActivity",
+  "Description": "Entries from the Azure Activity log that provides insight into any subscription-level or management group level events that have occurred in Azure.",
+  "LastModified": "\/Date(1589223263445+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "LogManagement"
+  },
+  "Version": 8,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "DisplayName": "TenantId",
+      "Description": "ID of the worksapce that stores this record",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SourceSystem",
+      "Description": "Azure is used always for AzureActivity",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CallerIpAddress",
+      "DisplayName": "CallerIpAddress",
+      "Description": "IP address of the user who has performed the operation UPN claim or SPN claim based on availability.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CategoryValue",
+      "DisplayName": "CategoryValue",
+      "Description": "Category of the activity log e.g. Administrative, Policy, Security.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "CorrelationId",
+      "DisplayName": "CorrelationId",
+      "Description": "Usually a GUID in the string format. Events that share a correlationId belong to the same uber action.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Authorization",
+      "DisplayName": "Authorization",
+      "Description": "Blob of RBAC properties of the event. Usually includes the “action”, “role” and “scope” properties. Stored as string. The use of Authorization_d should be preferred going forward.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Authorization_d",
+      "DisplayName": "Authorization_d",
+      "Description": "Blob of RBAC properties of the event. Usually includes the “action”, “role” and “scope” properties. Stored as dynamic column.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "Claims",
+      "DisplayName": "Claims",
+      "Description": "The JWT token used by Active Directory to authenticate the user or application to perform this operation in Resource Manager. The use of claims_d should be preferred going forward.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Claims_d",
+      "DisplayName": "Claims_d",
+      "Description": "The JWT token used by Active Directory to authenticate the user or application to perform this operation in Resource Manager.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "Level",
+      "DisplayName": "Level",
+      "Description": "Level of the event. One of the following values: Critical, Error, Warning, Informational and Verbose.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OperationNameValue",
+      "DisplayName": "OperationNameValue",
+      "Description": "Identifier of the operation e.g. Microsoft.Storage/storageAccounts/listAccountSas/action.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Properties",
+      "DisplayName": "Properties",
+      "Description": "Set of <Key Value> pairs (i.e. Dictionary) describing the details of the event. Stored as string. Usage of Properties_d is recommended instead.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Properties_d",
+      "DisplayName": "Properties_d",
+      "Description": "Set of <Key Value> pairs (i.e. Dictionary) describing the details of the event. Stored as dynamic column.",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "Caller",
+      "DisplayName": "Caller",
+      "Description": "GUID of the caller.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventDataId",
+      "DisplayName": "EventDataId",
+      "Description": "Unique identifier of an event.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventSubmissionTimestamp",
+      "DisplayName": "EventSubmissionTimestamp",
+      "Description": "Timestamp when the event became available for querying.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "HTTPRequest",
+      "DisplayName": "HTTPRequest",
+      "Description": "Blob describing the Http Request. Usually includes the “clientRequestId”, “clientIpAddress” and “method” (HTTP method. For example, PUT).",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Resource",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResourceId",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "OperationId",
+      "DisplayName": "OperationId",
+      "Description": "GUID of the operation",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResourceGroup",
+      "DisplayName": "ResourceGroup",
+      "Description": "Resource group name of the impacted resource.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResourceProviderValue",
+      "DisplayName": "ResourceProviderValue",
+      "Description": "Id of the resource provider for the impacted resource - e.g. Microsoft.Storage.",
+      "Context": {
+        "IsFacet": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ActivityStatusValue",
+      "DisplayName": "ActivityStatusValue",
+      "Description": "Status of the operation in display-friendly format. Common values include Started, In Progress, Succeeded, Failed, Active, Resolved.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ActivitySubstatusValue",
+      "DisplayName": "ActivitySubstatusValue",
+      "Description": "Substatus of the operation  in display-friendly format. E.g. OK (HTTP Status Code: 200).",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Hierarchy",
+      "DisplayName": "Hierarchy",
+      "Description": "Management group hierarchy of the management group or subscription that event belongs to.",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "DisplayName": "TimeGenerated",
+      "Description": "Timestamp when the event was generated by the Azure service processing the request corresponding the event.",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "SubscriptionId",
+      "Description": "Subscription ID of the impacted resource.",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "SecurityInsights",
+  "name": "DeviceInfo",
+  "displayName": "DeviceInfo",
+  "description": "This table is part of Microsoft Defender for Endpoints with Azure Sentinel. This table contains Machine information, including OS information.",
+  "artifactsVersion": 3,
+  "isResourceCentric": false,
+  "IsChangeColumnInternalNameAllowed": true,
+  "icm-team": "Microsoft Azure Sentinel/Data Collection",
+  "dataTypeId": "TENANTMICROSOFTWINDOWSDEFENDERATP_ADVANCEDHUNTINGDEVICEINFO",
+  "resourceProviderType": "Microsoft.SecurityInsights/dataCollection",
+  "categoryId": "security",
+  "sampleInputRecordsFilePath": "SampleInputRecords/DeviceInfoSample.json",
+  "properties": [
+    {
+      "name": "AdditionalFields",
+      "displayName": "AdditionalFields",
+      "internalName": "AdditionalFields_Dynamic",
+      "type": "Dynamic",
+      "dataSourcePropertyName": "properties",
+      "description": "Additional information about the entity or event.",
+      "jsonPath": "AdditionalFields"
+    },
+    {
+      "name": "ClientVersion",
+      "displayName": "ClientVersion",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Version of the endpoint agent or sensor running on the machine.",
+      "jsonPath": "ClientVersion"
+    },
+    {
+      "name": "DeviceId",
+      "displayName": "DeviceId",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Unique identifier for the device in the service.",
+      "jsonPath": "DeviceId",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "DeviceName",
+      "displayName": "DeviceName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Fully qualified domain name (FQDN) of the device.",
+      "jsonPath": "DeviceName"
+    },
+    {
+      "name": "DeviceObjectId",
+      "displayName": "DeviceObjectId",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Unique identifier for the device in Azure AD.",
+      "jsonPath": "DeviceObjectId",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "IsAzureADJoined",
+      "displayName": "IsAzureADJoined",
+      "type": "Bool",
+      "dataSourcePropertyName": "properties",
+      "description": "Boolean indicator of whether machine is joined to the Azure Active Directory.",
+      "jsonPath": "IsAzureADJoined"
+    },
+    {
+      "name": "LoggedOnUsers",
+      "displayName": "LoggedOnUsers",
+      "internalName": "LoggedOnUsers_Dynamic",
+      "type": "Dynamic",
+      "dataSourcePropertyName": "properties",
+      "description": "List of all users that are logged on the machine at the time of the event in JSON array format.",
+      "jsonPath": "LoggedOnUsers"
+    },
+    {
+      "name": "MachineGroup",
+      "displayName": "MachineGroup",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Machine group used to determine access to the machine and apply group-specific settings.",
+      "jsonPath": "MachineGroup"
+    },
+    {
+      "name": "OSArchitecture",
+      "displayName": "OSArchitecture",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Architecture of the operating system running on the machine.",
+      "jsonPath": "OSArchitecture"
+    },
+    {
+      "name": "OSBuild",
+      "displayName": "OSBuild",
+      "type": "BigInt",
+      "dataSourcePropertyName": "properties",
+      "description": "Build version of the operating system running on the machine.",
+      "jsonPath": "OSBuild"
+    },
+    {
+      "name": "OSPlatform",
+      "displayName": "OSPlatform",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Platform of the operating system running on the machine. This indicates specific operating systems, including variations within the same family, such as Windows 10 and Windows 7.",
+      "jsonPath": "OSPlatform"
+    },
+    {
+      "name": "OSVersion",
+      "displayName": "OSVersion",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Version of the operating system running on the machine.",
+      "jsonPath": "OSVersion"
+    },
+    {
+      "name": "PublicIP",
+      "displayName": "PublicIP",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Public IP address used by the onboarded machine to connect to the Windows Defender ATP service. This could be the IP address of the machine itself, a NAT device, or a proxy.",
+      "jsonPath": "PublicIP",
+      "dataTypeHint": "IP"
+    },
+    {
+      "name": "RegistryDeviceTag",
+      "displayName": "RegistryDeviceTag",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Device tag added through the registry.",
+      "jsonPath": "RegistryDeviceTag"
+    },
+    {
+      "name": "ReportId",
+      "displayName": "ReportId",
+      "type": "BigInt",
+      "dataSourcePropertyName": "properties",
+      "description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the ComputerName and EventTime columns..",
+      "jsonPath": "ReportId"
+    },
+    {
+      "name": "TimeGenerated",
+      "displayName": "TimeGenerated",
+      "type": "DateTime",
+      "dataSourcePropertyName": "properties",
+      "description": "Date and time when the record was generated.",
+      "jsonPath": "Timestamp",
+      "isDefaultDisplay": true
+    },
+    {
+      "name": "Timestamp",
+      "displayName": "Timestamp",
+      "type": "DateTime",
+      "dataSourcePropertyName": "properties",
+      "description": "Date and time when the record was generated. This is identical to TimeGenerated and added for query portability from MDATP Advanced Hunting.",
+      "jsonPath": "Timestamp",
+      "isHidden": true,
+      "isDefaultDisplay": false
+    }
+  ]
+}

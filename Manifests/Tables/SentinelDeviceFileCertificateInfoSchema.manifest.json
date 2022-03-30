@@ -1,0 +1,174 @@
+{
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "SecurityInsights",
+  "name": "DeviceFileCertificateInfo",
+  "displayName": "DeviceFileCertificateInfo",
+  "description": "Certificate information of signed files obtained from certificate verification events on endpoints.",
+  "artifactsVersion": 3,
+  "isResourceCentric": false,
+  "icm-team": "Microsoft Azure Sentinel/Data Collection",
+  "dataTypeId": "TENANTMICROSOFTWINDOWSDEFENDERATP_ADVANCEDHUNTINGDEVICEFILECERTIFICATEINFO",
+  "resourceProviderType": "Microsoft.SecurityInsights/dataCollection",
+  "categoryId": [ "security" ],
+  "sampleInputRecordsFilePath": "SampleInputRecords/DeviceFileCertificateInfoSample.json",
+  "properties": [
+    {
+      "name": "CertificateSerialNumber",
+      "displayName": "CertificateSerialNumber",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Identifier for the certificate that is unique to the issuing certificate authority (CA).",
+      "jsonPath": "CertificateSerialNumber"
+    },
+    {
+      "name": "CrlDistributionPointUrls",
+      "displayName": "CrlDistributionPointUrls",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "A list of network shares URLs that contains certificates and certificate revocation (CRLs).",
+      "jsonPath": "CrlDistributionPointUrls",
+      "dataTypeHint": "URI"
+    },
+    {
+      "name": "DeviceId",
+      "displayName": "DeviceId",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Unique identifier for the device in the service.",
+      "jsonPath": "DeviceId"
+    },
+    {
+      "name": "DeviceName",
+      "displayName": "DeviceName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Fully qualified domain name (FQDN) of the device.",
+      "jsonPath": "DeviceName"
+    },
+    {
+      "name": "IsRootSignerMicrosoft",
+      "displayName": "IsRootSignerMicrosoft",
+      "type": "Bool",
+      "dataSourcePropertyName": "properties",
+      "description": "Indicates whether the signer of the root certificate is Microsoft.",
+      "jsonPath": "IsRootSignerMicrosoft"
+    },
+    {
+      "name": "IsSigned",
+      "displayName": "IsSigned",
+      "type": "Bool",
+      "dataSourcePropertyName": "properties",
+      "description": "Indicates whether the file is signed.",
+      "jsonPath": "IsSigned"
+    },
+    {
+      "name": "IsTrusted",
+      "displayName": "IsTrusted",
+      "type": "Bool",
+      "dataSourcePropertyName": "properties",
+      "description": "Indicates whether the file is trusted based on the results of the WinVerifyTrust function, which checks for unknown root certificate information, invalid signatures, revoked certificates, and other questionable attributes.",
+      "jsonPath": "IsTrusted"
+    },
+    {
+      "name": "Issuer",
+      "displayName": "Issuer",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Information about the issuing certificate authority (CA).",
+      "jsonPath": "Issuer"
+    },
+    {
+      "name": "IssuerHash",
+      "displayName": "IssuerHash",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Unique hash value identifying issuing certificate authority (CA).",
+      "jsonPath": "IssuerHash"
+    },
+    {
+      "name": "MachineGroup",
+      "displayName": "MachineGroup",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Machine group of the machine. This group is used by role-based access control to determine access to the machine.",
+      "jsonPath": "MachineGroup"
+    },
+    {
+      "name": "ReportId",
+      "displayName": "ReportId",
+      "type": "BigInt",
+      "dataSourcePropertyName": "properties",
+      "description": "Unique identifier for the event.",
+      "jsonPath": "ReportId"
+    },
+    {
+      "name": "SHA1",
+      "displayName": "SHA1",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "SHA-1 hash of the file that the recorded action was applied to.",
+      "jsonPath": "SHA1"
+    },
+    {
+      "name": "SignatureType",
+      "displayName": "SignatureType",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Indicates whether signature information was read as embedded content in the file itself or read from an external catalog file.",
+      "jsonPath": "SignatureType"
+    },
+    {
+      "name": "Signer",
+      "displayName": "Signer",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Information about the signer of the file.",
+      "jsonPath": "Signer"
+    },
+    {
+      "name": "SignerHash",
+      "displayName": "SignerHash",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Unique hash value identifying the signer.",
+      "jsonPath": "SignerHash"
+    },
+    {
+      "name": "TimeGenerated",
+      "displayName": "TimeGenerated",
+      "type": "DateTime",
+      "dataSourcePropertyName": "properties",
+      "description": "Date and time (UTC) when the record was generated.",
+      "jsonPath": "Timestamp",
+      "isDefaultDisplay": true
+    },
+    {
+      "name": "Timestamp",
+      "displayName": "Timestamp",
+      "type": "DateTime",
+      "dataSourcePropertyName": "properties",
+      "description": "Date and time (UTC) when the record was generated.",
+      "jsonPath": "Timestamp",
+      "isHidden": true,
+      "isDefaultDisplay": false
+    },
+    {
+      "name": "CertificateCountersignatureTime",
+      "displayName": "CertificateCountersignatureTime",
+      "type": "DateTime",
+      "description": "Date and time (UTC) the certificate was countersigned."
+    },
+    {
+      "name": "CertificateCreationTime",
+      "displayName": "CertificateCreationTime",
+      "type": "DateTime",
+      "description": "Date and time (UTC) the certificate was created."
+    },
+    {
+      "name": "CertificateExpirationTime",
+      "displayName": "CertificateExpirationTime",
+      "type": "DateTime",
+      "description": "Certificate expiry date and time (UTC)."
+    }
+  ]
+}

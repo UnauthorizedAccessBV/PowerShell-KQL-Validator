@@ -1,0 +1,47 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.3/containers/powershell
+{
+  "name": "KqlValidator",
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": ["ms-vscode.powershell", "esbenp.prettier-vscode"],
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "pwsh",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "[powershell]": {
+      "editor.defaultFormatter": "ms-vscode.powershell"
+    }
+  },
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Uncomment the next line to run commands after the container is created. This gets run in bash which is why we call `pwsh`.
+  "postCreateCommand": "if [ ! \"$(ls packages/Microsoft.Azure.Kusto.Language.* 2>/dev/null)\" ]; then pwsh -c 'Register-PackageSource -Name Nuget -Location https://api.nuget.org/v3/index.json -ProviderName NuGet' && pwsh -c 'Install-Package Microsoft.Azure.Kusto.Language -Destination packages -Force'; fi",
+
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {}
+  },
+  // Features
+  "features": {
+    "common": {
+      "username": "automatic",
+      "uid": "automatic",
+      "gid": "automatic",
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true,
+      "nonFreePackages": false
+    },
+    "dotnet": {
+      "version": "6.0",
+      "runtimeOnly": true
+    }
+  }
+}

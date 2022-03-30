@@ -1,0 +1,163 @@
+{
+  "simplifiedSchemaVersion": "1.0",
+  "schemaGroupName": "SecurityInsights",
+  "name": "DeviceNetworkInfo",
+  "displayName": "DeviceNetworkInfo",
+  "description": "This table is part of Microsoft Defender for Endpoints with Azure Sentinel. This table contains Network properties of machines, including adapters, IP and MAC addresses, as well as connected networks and domains.",
+  "artifactsVersion": 3,
+  "isResourceCentric": false,
+  "IsChangeColumnInternalNameAllowed": true,
+  "icm-team": "Microsoft Azure Sentinel/Data Collection",
+  "dataTypeId": "TENANTMICROSOFTWINDOWSDEFENDERATP_ADVANCEDHUNTINGDEVICENETWORKINFO",
+  "resourceProviderType": "Microsoft.SecurityInsights/dataCollection",
+  "categoryId": "security",
+  "sampleInputRecordsFilePath": "SampleInputRecords/DeviceNetworkInfoSample.json",
+  "properties": [
+    {
+      "name": "ConnectedNetworks",
+      "displayName": "ConnectedNetworks",
+      "internalName": "ConnectedNetworks_Dynamic",
+      "type": "Dynamic",
+      "dataSourcePropertyName": "properties",
+      "description": "Networks that the adapter is connected to. Each JSON element in the array contains the network name, category (public, private or domain), a description, and a flag indicating if it\u00e2\u20ac\u2122s connected publicly to the internet.",
+      "jsonPath": "ConnectedNetworks"
+    },
+    {
+      "name": "DefaultGateways",
+      "displayName": "DefaultGateways",
+      "internalName": "DefaultGateways_Dynamic",
+      "type": "Dynamic",
+      "dataSourcePropertyName": "properties",
+      "description": "Default gateway addresses in JSON array format.",
+      "jsonPath": "DefaultGateways"
+    },
+    {
+      "name": "DeviceId",
+      "displayName": "DeviceId",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Unique identifier for the device in the service.",
+      "jsonPath": "DeviceId",
+      "dataTypeHint": "GUID"
+    },
+    {
+      "name": "DeviceName",
+      "displayName": "DeviceName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Fully qualified domain name (FQDN) of the device.",
+      "jsonPath": "DeviceName"
+    },
+    {
+      "name": "DnsAddresses",
+      "displayName": "DnsAddresses",
+      "internalName": "DnsAddresses_Dynamic",
+      "type": "Dynamic",
+      "dataSourcePropertyName": "properties",
+      "description": "DNS server addresses in JSON array format.",
+      "jsonPath": "DnsAddresses"
+    },
+    {
+      "name": "IPAddresses",
+      "displayName": "IPAddresses",
+      "internalName": "IPAddresses_Dynamic",
+      "type": "Dynamic",
+      "dataSourcePropertyName": "properties",
+      "description": "JSON array containing all the IP addresses assigned to the adapter, along with their respective subnet prefix and the IP class (RFC 1918 & RFC 4291).",
+      "jsonPath": "IPAddresses"
+    },
+    {
+      "name": "IPv4Dhcp",
+      "displayName": "IPv4Dhcp",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "IPv4 address of DHCP server.",
+      "jsonPath": "IPv4Dhcp",
+      "dataTypeHint": "IP"
+    },
+    {
+      "name": "IPv6Dhcp",
+      "displayName": "IPv6Dhcp",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "IPv6 address of DHCP server.",
+      "jsonPath": "IPv6Dhcp",
+      "dataTypeHint": "IP"
+    },
+    {
+      "name": "MacAddress",
+      "displayName": "MacAddress",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "MAC address of the network adapter.",
+      "jsonPath": "MacAddress"
+    },
+    {
+      "name": "MachineGroup",
+      "displayName": "MachineGroup",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Machine group of the machine. This group is used by role-based access control to determine access to the machine.",
+      "jsonPath": "MachineGroup"
+    },
+    {
+      "name": "NetworkAdapterName",
+      "displayName": "NetworkAdapterName",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Name of the network adapter.",
+      "jsonPath": "NetworkAdapterName"
+    },
+    {
+      "name": "NetworkAdapterStatus",
+      "displayName": "NetworkAdapterStatus",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Operational status of the network adapter.",
+      "jsonPath": "NetworkAdapterStatus"
+    },
+    {
+      "name": "NetworkAdapterType",
+      "displayName": "NetworkAdapterType",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Network adapter type.",
+      "jsonPath": "NetworkAdapterType"
+    },
+    {
+      "name": "ReportId",
+      "displayName": "ReportId",
+      "type": "BigInt",
+      "dataSourcePropertyName": "properties",
+      "description": "Event identifier based on a repeating counter. To identify unique events, this column must be used in conjunction with the ComputerName and EventTime columns..",
+      "jsonPath": "ReportId"
+    },
+    {
+      "name": "TimeGenerated",
+      "displayName": "TimeGenerated",
+      "type": "DateTime",
+      "dataSourcePropertyName": "properties",
+      "description": "Date and time when the record was generated.",
+      "jsonPath": "Timestamp",
+      "isDefaultDisplay": true
+    },
+    {
+      "name": "Timestamp",
+      "displayName": "Timestamp",
+      "type": "DateTime",
+      "dataSourcePropertyName": "properties",
+      "description": "Date and time when the record was generated. This is identical to TimeGenerated and added for query portability from MDATP Advanced Hunting.",
+      "jsonPath": "Timestamp",
+      "isHidden": true,
+      "isDefaultDisplay": false
+    },
+    {
+      "name": "TunnelType",
+      "displayName": "TunnelType",
+      "type": "String",
+      "dataSourcePropertyName": "properties",
+      "description": "Tunneling protocol, if the interface is used for this purpose, for example 6to4, Teredo, ISATAP, PPTP, SSTP, and SSH.",
+      "jsonPath": "TunnelType"
+    }
+  ]
+}

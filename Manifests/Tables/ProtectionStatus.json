@@ -1,0 +1,357 @@
+{
+  "Name": "ProtectionStatus",
+  "DisplayName": "ProtectionStatus",
+  "Description": "Antimalware installation info and security health status of the machine:",
+  "LastModified": "\/Date(1547959600405+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "AntiMalware,SecurityCenterFree,Security,SecurityCenter",
+    "isChangeColumnInternalNameAllowed": "True"
+  },
+  "Version": 21,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": false,
+  "RetentionPolicy": {
+    "RetentionType": "Small",
+    "PerformHardDeleteGrooming": false
+  },
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "Context": {
+        "IsFacet": "False"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SourceSystem",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "SourceComputerId",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "DeviceName",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DetectionId",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "OSName",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Threat",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ThreatStatusRank",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "ThreatStatus",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ThreatStatusDetails",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ProtectionStatusRank",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "ProtectionStatus",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ProtectionStatusDetails",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SignatureVersion",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TypeofProtection",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ScanDate",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "DateCollected",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AMProductVersion",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MG",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ManagementGroupName",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Computer",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ComputerIP_Hidden",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResourceId",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ComputerEnvironment",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Resource",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SubscriptionId",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ResourceGroup",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResourceProvider",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ResourceType",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "VMUUID",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    }
+  ]
+}

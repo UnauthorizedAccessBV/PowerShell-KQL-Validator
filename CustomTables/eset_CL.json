@@ -1,0 +1,381 @@
+{
+  "Name": "eset_CL",
+  "Properties": [
+    {
+      "name": "_timestamp_t",
+      "type": "DateTime"
+    },
+    {
+      "name": "account_s",
+      "type": "String"
+    },
+    {
+      "name": "action_error_s",
+      "type": "String"
+    },
+    {
+      "name": "action_s",
+      "type": "String"
+    },
+    {
+      "name": "action_taken_s",
+      "type": "String"
+    },
+    {
+      "name": "aggregate_count_d",
+      "type": "Integer"
+    },
+    {
+      "name": "cause_s",
+      "type": "String"
+    },
+    {
+      "name": "circumstances_s",
+      "type": "String"
+    },
+    {
+      "name": "computer_severity_score_d",
+      "type": "Integer"
+    },
+    {
+      "name": "count_d",
+      "type": "Integer"
+    },
+    {
+      "name": "description_s",
+      "type": "String"
+    },
+    {
+      "name": "detail_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_computerId_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_computerName_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_computerUuid_g",
+      "type": "Uuid"
+    },
+    {
+      "name": "detection_creationTime_t",
+      "type": "DateTime"
+    },
+    {
+      "name": "detection_event_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_handled_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_id_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_moduleFirstSeenLocally_t",
+      "type": "DateTime"
+    },
+    {
+      "name": "detection_moduleId_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_moduleLastExecutedLocally_t",
+      "type": "DateTime"
+    },
+    {
+      "name": "detection_moduleLgAge_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_moduleLgPopularity_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_moduleLgReputation_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_moduleName_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_moduleSha1_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_moduleSignatureType_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_moduleSigner_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_note_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_priority_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_processCommandLine_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_processId_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_processPath_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_processUser_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_resolved_b",
+      "type": "Boolean"
+    },
+    {
+      "name": "detection_ruleName_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_severityScore_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_severity_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_threatName_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_threatUri_s",
+      "type": "String"
+    },
+    {
+      "name": "detection_type_d",
+      "type": "Integer"
+    },
+    {
+      "name": "detection_uuid_g",
+      "type": "Uuid"
+    },
+    {
+      "name": "domain_s",
+      "type": "String"
+    },
+    {
+      "name": "eiconsolelink_s",
+      "type": "String"
+    },
+    {
+      "name": "engine_version_s",
+      "type": "String"
+    },
+    {
+      "name": "event_s",
+      "type": "String"
+    },
+    {
+      "name": "event_type_s",
+      "type": "String"
+    },
+    {
+      "name": "firstseen_t",
+      "type": "DateTime"
+    },
+    {
+      "name": "hash_s",
+      "type": "String"
+    },
+    {
+      "name": "host_s",
+      "type": "String"
+    },
+    {
+      "name": "hostname_s",
+      "type": "String"
+    },
+    {
+      "name": "inbound_b",
+      "type": "Boolean"
+    },
+    {
+      "name": "ipv4_s",
+      "type": "String"
+    },
+    {
+      "name": "ipv6_s",
+      "type": "String"
+    },
+    {
+      "name": "need_restart_b",
+      "type": "Boolean"
+    },
+    {
+      "name": "object_type_s",
+      "type": "String"
+    },
+    {
+      "name": "object_uri_s",
+      "type": "String"
+    },
+    {
+      "name": "occured_t",
+      "type": "DateTime"
+    },
+    {
+      "name": "port_d",
+      "type": "Integer"
+    },
+    {
+      "name": "process_name_s",
+      "type": "String"
+    },
+    {
+      "name": "processname_s",
+      "type": "String"
+    },
+    {
+      "name": "protocol_s",
+      "type": "String"
+    },
+    {
+      "name": "result_s",
+      "type": "String"
+    },
+    {
+      "name": "rule_id_s",
+      "type": "String"
+    },
+    {
+      "name": "rule_name_s",
+      "type": "String"
+    },
+    {
+      "name": "rulename_s",
+      "type": "String"
+    },
+    {
+      "name": "scan_id_s",
+      "type": "String"
+    },
+    {
+      "name": "scanner_id_s",
+      "type": "String"
+    },
+    {
+      "name": "severity_s",
+      "type": "String"
+    },
+    {
+      "name": "severity_score_d",
+      "type": "Integer"
+    },
+    {
+      "name": "source_address_s",
+      "type": "String"
+    },
+    {
+      "name": "source_address_type_s",
+      "type": "String"
+    },
+    {
+      "name": "source_port_d",
+      "type": "Integer"
+    },
+    {
+      "name": "source_uuid_g",
+      "type": "Uuid"
+    },
+    {
+      "name": "syslog5424_app_s",
+      "type": "String"
+    },
+    {
+      "name": "syslog5424_host_s",
+      "type": "String"
+    },
+    {
+      "name": "syslog5424_pri_d",
+      "type": "Integer"
+    },
+    {
+      "name": "syslog5424_proc_d",
+      "type": "Integer"
+    },
+    {
+      "name": "syslog5424_ts_t",
+      "type": "DateTime"
+    },
+    {
+      "name": "syslog5424_ver_d",
+      "type": "Integer"
+    },
+    {
+      "name": "tags_s",
+      "type": "String"
+    },
+    {
+      "name": "target_address_s",
+      "type": "String"
+    },
+    {
+      "name": "target_address_type_s",
+      "type": "String"
+    },
+    {
+      "name": "target_s",
+      "type": "String"
+    },
+    {
+      "name": "target_port_d",
+      "type": "Integer"
+    },
+    {
+      "name": "threat_flags_s",
+      "type": "String"
+    },
+    {
+      "name": "threat_handled_b",
+      "type": "Boolean"
+    },
+    {
+      "name": "threat_name_s",
+      "type": "String"
+    },
+    {
+      "name": "threat_type_s",
+      "type": "String"
+    },
+    {
+      "name": "type_s",
+      "type": "String"
+    },
+    {
+      "name": "user_s",
+      "type": "String"
+    },
+    {
+      "name": "username_s",
+      "type": "String"
+    },
+    {
+      "name": "TimeGenerated",
+      "type": "DateTime"
+    }
+  ]
+}

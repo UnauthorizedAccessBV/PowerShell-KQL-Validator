@@ -1,0 +1,604 @@
+{
+  "Name": "W3CIISLog",
+  "DisplayName": "W3CIISLog",
+  "Description": "Internet Information Server (IIS) log on Windows computers using the Log Analytics agent.",
+  "LastModified": "\/Date(1467069123661+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "LogManagement"
+  },
+  "Version": 13,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "RetentionPolicy": {
+    "RetentionType": "Small",
+    "PerformHardDeleteGrooming": false
+  },
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "Description": "ID of the workspace that stores this record.",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SourceSystem",
+      "Description": "Type of agent the event was collected from. Possible values are OpsManager and AzureStorage.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileUri",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension).",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "FileOffset",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension).",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "StorageAccount",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services through Azure Diagnostics Extension.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AzureDeploymentID",
+      "Description": "Azure deployment ID of the cloud service the log belongs to. Only populated when events are collected using Azure Diagnostics agent  when data is pulled from Azure storage.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Role",
+      "Description": "Role instance of the cloud service the log belongs to. Only populated when events are collected using Azure Diagnostics agent and data is pulled from Azure storage.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RoleInstance",
+      "Description": "Role of the cloud service the log belongs to. Only populated when events are collected using Azure Diagnostics agent and data is pulled from Azure storage.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Date",
+      "Description": "Date the activity occurred.",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Time",
+      "Description": "The time the activity occurred in UTC.",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TimeGenerated",
+      "Description": "Date and time the record was created.",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": true,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "sSiteName",
+      "Description": "Name of the IIS site.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "sComputerName",
+      "Description": "Name of the server on which the log file entry was generated.",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "sIP",
+      "Description": "IP address of the server on which the log file entry was generated.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "csMethod",
+      "Description": "Method of the request such as GET or POST.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "csUriStem",
+      "Description": "Target of the action such as a web page for example Default.htm.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "csUriQuery",
+      "Description": "The query if any that the client was trying to perform. A Universal Resource Identifier (URI) query is necessary only for dynamic pages.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "sPort",
+      "Description": "Server port number that is configured for the service.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "csUserName",
+      "Description": "Name of the authenticated user that accessed the server. Anonymous users are indicated by a hyphen.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "cIP",
+      "Description": "IP address of the client that accessed the web server.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "csVersion",
+      "Description": "Protocol version that the client used.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "csUserAgent",
+      "Description": "Browser type of the client.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "csCookie",
+      "Description": "Content of the cookie sent or received if any.",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "csReferer",
+      "Description": "Site that the user last visited. This site provided a link to the current site.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "csHost",
+      "Description": "Host header name if any.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "scStatus",
+      "Description": "HTTP status code.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "scSubStatus",
+      "Description": "Substatus error code.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "scWin32Status",
+      "Description": "Windows status code.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "scBytes",
+      "Description": "Number of bytes that the server sent.",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "BigInt"
+    },
+    {
+      "Name": "csBytes",
+      "Description": "Number of bytes that the server received.",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "BigInt"
+    },
+    {
+      "Name": "TimeTaken",
+      "Description": "Length of time to process the request in milliseconds.",
+      "Context": {
+        "IsFacet": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "BigInt"
+    },
+    {
+      "Name": "Computer",
+      "Description": "Name of the computer that the event was collected from.",
+      "Context": {
+        "IsFacet": "True",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MG",
+      "Description": "Id of the management group for System Center Operations Manager agents.",
+      "Context": {
+        "IsHidden": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "ManagementGroupName",
+      "Description": "Name of the management group for Operations Manager agents. For other agents this is AOI-<workspace ID>.",
+      "Context": {
+        "IsFacet": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "MaliciousIP",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension).",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "IndicatorThreatType",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension).",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Description",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension).",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "TLPLevel",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services through Azure Diagnostics Extension.",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Confidence",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services through Azure Diagnostics Extension.",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "Severity",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services through Azure Diagnostics Extension.",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "FirstReportedDateTime",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension).",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "LastReportedDateTime",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension).",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "IsActive",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension).",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "False",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ReportReferenceLink",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services (through Azure Diagnostics Extension)",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "True",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "AdditionalInformation",
+      "Description": "Only populated for IIS logs collected from Azure Cloud Services through Azure Diagnostics Extension.",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "RemoteIPLongitude",
+      "Description": "Longitude of the client IP address.",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Float"
+    },
+    {
+      "Name": "RemoteIPLatitude",
+      "Description": "Latitude of the client IP address.",
+      "Context": {
+        "IsFacet": "False",
+        "IsHidden": "False",
+        "IsFreeText": "False"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Float"
+    },
+    {
+      "Name": "RemoteIPCountry",
+      "Description": "Country/region of the IP address of the client.",
+      "Context": {
+        "IsFacet": "True",
+        "IsHidden": "False",
+        "IsDefaultDisplay": "True",
+        "IsFreeText": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}

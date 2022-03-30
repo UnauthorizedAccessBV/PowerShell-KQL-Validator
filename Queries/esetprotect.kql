@@ -1,0 +1,3 @@
+ESETPROTECT
+| where NetworkRuleName has "Cobalt Strike" 
+| order by TimeGenerated desc

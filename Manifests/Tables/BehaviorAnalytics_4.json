@@ -1,0 +1,236 @@
+{
+  "Name": "BehaviorAnalytics",
+  "DisplayName": "BehaviorAnalytics",
+  "Description": "This table stores the enriched events for Sentinel UEBA, providing behavior analytics over raw data.",
+  "LastModified": "\/Date(1588774114300+0000)\/",
+  "Context": {
+    "CustomerType": "Public",
+    "IntelligencePacks": "BehaviorAnalyticsInsights"
+  },
+  "Version": 4,
+  "TenantId": "ef8ef434-4481-b53e-1853-6fc4a64719e9",
+  "DataGrain": "NotSpecified",
+  "IsResourceCentric": true,
+  "ICMTeamName": null,
+  "IsAppendOnly": true,
+  "DataVelocity": "FastMoving",
+  "Properties": [
+    {
+      "Name": "TenantId",
+      "DisplayName": "TenantId",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "SourceRecordId",
+      "DisplayName": "SourceRecordId",
+      "Description": "The unique Id of the source raw event",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Guid"
+    },
+    {
+      "Name": "TimeGenerated",
+      "DisplayName": "TimeGenerated",
+      "Description": "Time when the raw event was generated (UTC)",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "TimeProcessed",
+      "DisplayName": "TimeProcessed",
+      "Description": "Time when enrichment processing occurred (UTC)",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "DateTime"
+    },
+    {
+      "Name": "ActivityType",
+      "DisplayName": "ActivityType",
+      "Description": "The activity type that triggered the event",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "ActionType",
+      "DisplayName": "ActionType",
+      "Description": "The specific type of action that triggered the event",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserName",
+      "DisplayName": "UserName",
+      "Description": "User name of the account",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UserPrincipalName",
+      "DisplayName": "UserPrincipalName",
+      "Description": "User principal name of the account",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "EventSource",
+      "DisplayName": "EventSource",
+      "Description": "Data source for this event",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceIPAddress",
+      "DisplayName": "SourceIPAddress",
+      "Description": "The source IP address",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceIPLocation",
+      "DisplayName": "SourceIPLocation",
+      "Description": "The source Geo location based on the IP address",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "SourceDevice",
+      "DisplayName": "SourceDevice",
+      "Description": "The hostname of the source device",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestinationIPAddress",
+      "DisplayName": "DestinationIPAddress",
+      "Description": "The destination IP address",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestinationIPLocation",
+      "DisplayName": "DestinationIPLocation",
+      "Description": "The destination Geo location based on the IP address",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "DestinationDevice",
+      "DisplayName": "DestinationDevice",
+      "Description": "The hostname of the destination device",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    },
+    {
+      "Name": "UsersInsights",
+      "DisplayName": "UsersInsights",
+      "Description": "Users metadata and insights",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "DevicesInsights",
+      "DisplayName": "DevicesInsights",
+      "Description": "Devices metadata and insights",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "ActivityInsights",
+      "DisplayName": "ActivityInsights",
+      "Description": "Activity and behavioral insights",
+      "Context": {
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Dynamic"
+    },
+    {
+      "Name": "InvestigationPriority",
+      "DisplayName": "InvestigationPriority",
+      "Description": "Investigation priority score",
+      "Context": {
+        "IsHidden": "True",
+        "IsDefaultDisplay": "True"
+      },
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "Int"
+    },
+    {
+      "Name": "SourceSystem",
+      "DisplayName": "SourceSystem",
+      "Context": {},
+      "IsKey": false,
+      "MaxLength": 0,
+      "Type": "String"
+    }
+  ]
+}
