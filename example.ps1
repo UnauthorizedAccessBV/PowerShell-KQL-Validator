@@ -26,12 +26,7 @@ Get-ChildItem $QueryFolder -Filter "*.kql" | ForEach-Object {
         Write-Host "Query $($_.BaseName) is valid"
     }
     else {
-        $Failed = $true
-        Write-Error "Query $($_.BaseName) is invalid"
         $TestFailed | Format-Table
+        Write-Error "Query $($_.BaseName) is invalid"
     }
-}
-
-if ($Failed) {
-    throw "One or more rules failed to validate."
 }
