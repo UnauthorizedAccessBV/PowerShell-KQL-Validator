@@ -1,0 +1,21 @@
+name: Validate KQL queries
+on: push
+
+jobs:
+  kql-validate:
+    name: KQL Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
+      - name: Install Kusto.Language
+        shell: pwsh
+        run: |
+          Install-Package Microsoft.Azure.Kusto.Language -Force -Destination "${{ github.workspace }}/Modules/Packages"
+          cp "${{ github.workspace }}/Modules/Packages/Microsoft.Azure.Kusto.Language.*/lib/netcoreapp2.1/Kusto.Language.dll" "${{ github.workspace }}Modules/Kusto.Language.dll"
+      - name: Test queries
+        shell: pwsh
+        run: |
+          ${{ github.workspace }}/example.ps1
