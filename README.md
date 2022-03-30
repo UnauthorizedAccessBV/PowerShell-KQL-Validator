@@ -69,6 +69,10 @@ You can also try the [**`example script`**](example.ps1):
 
 Custom tables for Microsoft Sentinel can be found [here](https://github.com/Azure/Azure-Sentinel/tree/46b6220e5d4d8947085e52352389f2b006733670/.script/tests/KqlvalidationsTests/CustomTables). Add them to the [**`CustomTables`**](CustomTables/) folder.
 
+## Github actions
+
+A simple [Github actions workflow](.github/workflows/KqlValidation.yaml) is also avaiable. Check out the results [here](https://github.com/UnauthorizedAccessBV/PowerShell-KQL-Validator/actions).
+
 ## [OPTIONAL] Extracting sentinel nupkg
 
 This part explains how to extract the sentinel table manifests from the KustoServices nupkg file found in the [sentinel github repository](https://github.com/Azure/Azure-Sentinel/tree/master/.script/tests/KqlvalidationsTests).
