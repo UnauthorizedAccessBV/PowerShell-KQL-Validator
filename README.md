@@ -28,7 +28,7 @@ cp Modules/Packages/Microsoft.Azure.Kusto.Language.*/lib/netcoreapp2.1/Kusto.Lan
 
 ```powershell
 # Import the module
-Install-Package Microsoft.Azure.Kusto.Language -Force -Destination "Modules/Packages"
+Import-Module ./Modules/KqlValidation
 
 # Create the GlobalState object
 $GlobalState = Get-GlobalState -TableFolder "./Manifests/Tables/" -FunctionFolder "./Manifests/Functions/"
