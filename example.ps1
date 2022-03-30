@@ -1,8 +1,8 @@
 # Define parameters
 param (
-    [String[]][Parameter(Mandatory = $false)]$TableFolder = $(Join-Path -Path $PSScriptRoot -ChildPath "Manifests" -AdditionalChildPath "Tables"),
-    [String[]][Parameter(Mandatory = $false)]$CustomTableFolder = $(Join-Path -Path $PSScriptRoot -ChildPath "CustomTables"),
-    [String[]][Parameter(Mandatory = $false)]$FunctionFolder = $(Join-Path -Path $PSScriptRoot -ChildPath "Manifests" -AdditionalChildPath "Functions"),
+    [String][Parameter(Mandatory = $false)]$TableFolder = $(Join-Path -Path $PSScriptRoot -ChildPath "Manifests" -AdditionalChildPath "Tables"),
+    [String][Parameter(Mandatory = $false)]$CustomTableFolder = $(Join-Path -Path $PSScriptRoot -ChildPath "CustomTables"),
+    [String][Parameter(Mandatory = $false)]$FunctionFolder = $(Join-Path -Path $PSScriptRoot -ChildPath "Manifests" -AdditionalChildPath "Functions"),
     [String][Parameter(Mandatory = $false)]$QueryFolder = $(Join-Path -Path $PSScriptRoot -ChildPath "Queries")
 )
 
@@ -10,7 +10,7 @@ param (
 Import-Module "$PSScriptRoot/Modules/KqlValidation"
 
 # Get GlobalState
-$TableFolders = $TableFolder + $CustomTableFolder
+$TableFolders = $($TableFolder, $CustomTableFolder)
 $GlobalState = Get-GlobalState -TableFolder $TableFolders -FunctionFolder $FunctionFolder
 
 # Set failed param
