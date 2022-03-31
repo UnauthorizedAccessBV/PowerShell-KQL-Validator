@@ -13,9 +13,6 @@ Import-Module "$PSScriptRoot/Modules/KqlValidation"
 $TableFolders = $($TableFolder, $CustomTableFolder)
 $GlobalState = Get-GlobalState -TableFolder $TableFolders -FunctionFolder $FunctionFolder
 
-# Set failed param
-$Failed = $false
-
 # Test all queries in query folder
 Get-ChildItem $QueryFolder -Filter "*.kql" | ForEach-Object {
     $Query = Get-Content -Path $_.FullName

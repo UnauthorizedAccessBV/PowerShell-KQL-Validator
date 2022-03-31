@@ -95,15 +95,9 @@ Function Invoke-CreateFunctionSymbol($Schema) {
     $ParameterList = [System.Collections.Generic.List[Kusto.Language.Symbols.Parameter]]::new()
     $ColumnSymbolList = [System.Collections.Generic.List[Kusto.Language.Symbols.ColumnSymbol]]::new()
 
-    $Schema.FunctionResultColumns | ForEach-Object {
-        $ColumnSymbolList.Add(
-            $(Invoke-ToColumnSymbol -Column $_)
-        )
-    }
-
     $Schema.FunctionParameters | ForEach-Object {
         $ScalarType = [Kusto.Language.Symbols.ScalarTypes]::GetSymbol($_.Type.ToLowerInvariant())
-        
+
         if ($null -eq $ScalarType) {
             $ScalarType = [Kusto.Language.Symbols.ScalarTypes]::Unknown
         }
@@ -122,7 +116,22 @@ Function Invoke-CreateFunctionSymbol($Schema) {
             )
         )
     }
-    
+
+    if (([string]::IsNullOrEmpty($Schema.FunctionResultColumns)) -and (-not ([string]::IsNullOrEmpty($Schema.Query)))) {
+        return [Kusto.Language.Symbols.FunctionSymbol]::new(
+            $Schema.FunctionName,
+            [string]$Schema.Query,
+            [System.Collections.Generic.IReadOnlyList[Kusto.Language.Symbols.Parameter]]$ParameterList,
+            $null
+        )
+    }
+
+    $Schema.FunctionResultColumns | ForEach-Object {
+        $ColumnSymbolList.Add(
+            $(Invoke-ToColumnSymbol -Column $_)
+        )
+    }
+
     return [Kusto.Language.Symbols.FunctionSymbol]::new(
         $Schema.FunctionName,
         [Kusto.Language.Symbols.TableSymbol]::new($ColumnSymbolList),
@@ -137,11 +146,8 @@ Function Invoke-LoadFunction ($SchemaFile) {
 }
 
 Function Get-GlobalState ($TableFolder, $FunctionFolder) {
-    
-    # Set up empty lists
     $TableSchemaList = [System.Collections.Generic.List[object]]::new()
     $FunctionSchemaList = [System.Collections.Generic.List[object]]::new()
-    $SymbolList = [System.Collections.Generic.List[Kusto.Language.Symbols.Symbol]]::new()
 
     # Load table schemas
     Get-ChildItem -Path $TableFolder -Filter "*.json" |
@@ -151,18 +157,27 @@ Function Get-GlobalState ($TableFolder, $FunctionFolder) {
         )
     }
 
+    if (-not([string]::IsNullOrEmpty($FunctionFolder))) {
+        # Create function symbols
+        Get-ChildItem -Path $FunctionFolder -Filter "*.json" |
+        ForEach-Object {
+            $FunctionSchemaList.Add(
+                $(Invoke-LoadFunction -SchemaFile $_.FullName)
+            )
+        }
+    }
+    return $(Get-GlobalStateFromLists -TableSchemaList $TableSchemaList -FunctionSchemaList $FunctionSchemaList)
+}
+
+Function Get-GlobalStateFromLists ($TableSchemaList, $FunctionSchemaList) {
+
+    # Set up empty lists
+    $SymbolList = [System.Collections.Generic.List[Kusto.Language.Symbols.Symbol]]::new()
+
     # Create table symbols
     $TableSchemaList | ForEach-Object {
         $Symbollist.Add(
             [Kusto.Language.Symbols.Symbol][object]$(Invoke-CreateTableSymbol -TableSchema $_)
-        )
-    }
-
-    # Create function symbols
-    Get-ChildItem -Path $FunctionFolder -Filter "*.json" |
-    ForEach-Object {
-        $FunctionSchemaList.Add(
-            $(Invoke-LoadFunction -SchemaFile $_.FullName)
         )
     }
 
@@ -171,7 +186,7 @@ Function Get-GlobalState ($TableFolder, $FunctionFolder) {
             [Kusto.Language.Symbols.Symbol][object]$(Invoke-CreateFunctionSymbol -Schema $_)
         )
     }
-    
+
     # Create database
     $DatabaseSymbol = [Kusto.Language.Symbols.DatabaseSymbol]::new(
         "default",

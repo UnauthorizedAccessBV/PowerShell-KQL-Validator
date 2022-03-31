@@ -69,6 +69,33 @@ You can also try the [**`example script`**](example.ps1):
 
 Custom tables for Microsoft Sentinel can be found [here](https://github.com/Azure/Azure-Sentinel/tree/46b6220e5d4d8947085e52352389f2b006733670/.script/tests/KqlvalidationsTests/CustomTables). Add them to the [**`CustomTables`**](CustomTables/) folder.
 
+## Advanced usage example
+
+The basic usage example works when you just have everything in **`.json`** files. However, for more advanced operation there is also a function that allows you to pass in lists of objects directly. This is useful if you have your queries saved in a different format (**`.yaml`** for example).
+
+```powershell
+# Create empty lists
+$TableSchemaList = [System.Collections.Generic.List[object]]::new()
+$FunctionSchemaList = [System.Collections.Generic.List[object]]::new()
+
+# Load the object in any way you want
+$Schema = $(Get-Content -Path "path/to/schema.yaml" -Raw | ConvertFrom-Yaml)
+
+# Add the default columns to the object
+Invoke-AddCommonColumns -Schema $Schema
+
+# Add the object to the list
+$TableSchemaList.Add(
+    [PSCustomObject]@{
+        Name       = $Schema.Name
+        Properties = $Schema.Properties
+    }
+)
+
+# Repeat this for all tables and functions, then create the GlobalState. Then run queries as normal, passing in this GlobalState.
+$GlobalState = Get-GlobalStateFromLists -TableSchemaList $TableSchemaList -FunctionSchemaList $FunctionSchemaList
+```
+
 ## Github actions
 
 A simple [Github actions workflow](.github/workflows/KqlValidation.yaml) is also avaiable. Check out the results [here](https://github.com/UnauthorizedAccessBV/PowerShell-KQL-Validator/actions).
